@@ -34,6 +34,7 @@ install: build
 	dh_clean -k 
 	dh_installdirs
 	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
+	find $(CURDIR)/debian/tmp -name "*.mo" -print0 | xargs -0 chmod -x
 
 binary-indep: build install
 	dh_testdir
