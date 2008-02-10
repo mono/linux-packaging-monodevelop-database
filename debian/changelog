@@ -1,4 +1,4 @@
-monodevelop-database (0.18+dfsg-1~pre1) unstable; urgency=low
+monodevelop-database (0.18+dfsg-1) unstable; urgency=low
 
   * DFSG version of monodevelop-database 0.18
     (deleted all pre-compiled binaries from the tarball)
