@@ -1,41 +1,26 @@
-This package was debianized by Mirco Bauer <meebey@meebey.net> on
-Mon, 15 Mar 2004 18:41:55 +0100.
+This package was debianized by Mirco Bauer <meebey@debian.org> on
+Sun, Dec 30 2007 14:04:25 +0100.
 
-It was downloaded from http://www.monodevelop.com/
+It was downloaded from:
+http://www.monodevelop.com/
 
-Upstream Authors: 
-Todd Berman
-Pedro Abelleira Seco
-John Luke
-Daniel Kornhauser
-Alex Graveley
-nricciar
-John Bou Antoun
-Ben Maurer
-Jeroen Zwartepoorte
-Gustavo Giráldez
-Miguel de Icaza
-Nick Drochak
-Pawel Rozanski
-Vincent Daron
-Erik Dasque
-Iain McCoy
-Inigo Illan
-Richard Torkar
-Paco Martinez
-Atsushi Enomoto
-Martin Willemoes Hansen
-Antonio Ognio
-Andre Filipe de Assuncao e Brito
-Maurício de Lemos Rodrigues Collares Neto
-Christian Hergert
-Ankit Jain
-Jacob Ilsø Christensen
-
-and Mike Krueger and the SharpDevelop team
+Authors: 
+Christian Hergert <chris@mosaix.net>
+Daniel Morgan <danielmorgan@verizon.net>
+Sureshkumar T <tsureshkumar@novell.com>
+Ben Motmans <ben.motmans@gmail.com>
 
 Copyright:
+Copyright (c) 2005 Christian Hergert
+Copyright (C) 2005 Mosaix Communications, Inc.
+Copyright (c) 2007 Ben Motmans
 
+MonoDevelop.Database.Query/SqlQueryView.cs:
+Copyright (C) 2005 Christian Hergert
+Copyright (C) 2005 Daniel Morgan
+Copyright (c) 2007 Ben Motmans
+
+License:
    This package is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation; version 2 dated June, 1991.
@@ -52,6 +37,3 @@ Copyright:
 
 On Debian systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL'.
-
-The source of the stetic library can be found here:
-http://svn.myrealbox.com/viewcvs/trunk/stetic/

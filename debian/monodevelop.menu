@@ -1,3 +1,0 @@
-?package(monodevelop):needs="X11" section="Apps/Programming"\
-  title="MonoDevelop" command="/usr/bin/monodevelop"\
-  icon="/usr/share/pixmaps/monodevelop.png"
