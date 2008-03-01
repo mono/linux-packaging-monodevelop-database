@@ -33,3 +33,9 @@ Description: Database plugin for MonoDevelop
  languages.
  .
  This package implements database features for MonoDevelop.
+ .
+ The following RDBMSs are supported:
+  * MySQL
+  * PostgreSQL
+  * SQLite
+  * Micrsoft SQL Server

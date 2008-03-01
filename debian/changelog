@@ -8,6 +8,8 @@ monodevelop-database (0.19+dfsg-1) unstable; urgency=low
   * New upstream release
   * debian/copyright:
     + Re-checked copyrights and licenses.
+  * debian/control:
+    + Enhanced package long description.
 
  -- Mirco Bauer <meebey@debian.org>  Sat, 01 Mar 2008 15:41:35 +0100
 
