@@ -1,6 +1,10 @@
 This package was debianized by Mirco Bauer <meebey@debian.org> on
 Sun, Dec 30 2007 14:04:25 +0100.
 
+The copyrights and licenses of the complete source code of monodevelop-database
+(version 0.19) was checked by Mirco Bauer <meebey@debian.org> on
+Sat, Mar  1 2008 16:10:29 +0100.
+
 It was downloaded from:
 http://www.monodevelop.com/
 
@@ -11,29 +15,97 @@ Sureshkumar T <tsureshkumar@novell.com>
 Ben Motmans <ben.motmans@gmail.com>
 
 Copyright:
-Copyright (c) 2005 Christian Hergert
-Copyright (C) 2005 Mosaix Communications, Inc.
+MonoDevelop.Database.Components/*
+MonoDevelop.Database.Designer/*
 Copyright (c) 2007 Ben Motmans
 
-MonoDevelop.Database.Query/SqlQueryView.cs:
+MonoDevelop.Database.ConnectionManager/*
+Copyright (C) 2005 Mosaix Communications, Inc
+Copyright (c) 2007 Ben Motmans
+
+MonoDevelop.Database.Query/Commands/ToolCommands.cs
+Copyright (c) 2007 Ben Motmans
+
+MonoDevelop.Database.Query/QueryResultView.cs
+Copyright (C) 2005 Christian Hergert
+Copyright (c) 2007 Ben Motmans
+
+MonoDevelop.Database.Query/SqlQueryView.cs
 Copyright (C) 2005 Christian Hergert
 Copyright (C) 2005 Daniel Morgan
 Copyright (c) 2007 Ben Motmans
 
+MonoDevelop.Database.Sql/* (except AddinCatalog.cs)
+Copyright (c) 2007 Ben Motmans
+
+MonoDevelop.Database.Sql/Providers/*
+MonoDevelop.Database.Sql/Schema/*
+Copyright (C) 2005 Mosaix Communications, Inc.
+Copyright (c) 2007 Ben Motmans
+
+MonoDevelop.Database.Sql/AddinCatalog.cs
+Copyright (c) 2007 Novell, Inc (http://www.novell.com)
+
+MonoDevelop.Database.Sql/ConnectionContextService.cs
+MonoDevelop.Database.Sql/QueryService.cs
+Copyright (c) 2005 Christian Hergert
+Copyright (c) 2007 Ben Motmans
+
+MonoDevelop.Database.Sql.MySql/*
+Copyright (C) 2005 Mosaix Communications, Inc.
+Copyright (c) 2007 Ben Motmans
+
+MonoDevelop.Database.Sql.Npgsql/*
+Copyright (C) 2005 Mosaix Communications, Inc
+Copyright (c) 2007 Ben Motmans
+
+MonoDevelop.Database.Sql.SqlServer/*
+Copyright (C) 2005 Mosaix Communications, Inc.
+Copyright (c) 2007 Ben Motmans
+
+MonoDevelop.Database.Sql.Sqlite/*
+Copyright (C) 2005 Mosaix Communications, Inc.
+Copyright (c) 2007 Ben Motmans
+
 License:
-   This package is free software; you can redistribute it and/or modify
-   it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; version 2 dated June, 1991.
+All sources in this source package is licensed under the MIT/X11 license:
 
-   This package is distributed in the hope that it will be useful,
-   but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-   GNU General Public License for more details.
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
 
-   You should have received a copy of the GNU General Public License
-   along with this package; if not, write to the Free Software
-   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
-   02111-1307, USA.
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+As this are plugins for MonoDevelop and thus linked with MonoDevelop, which is
+GPL licensed making this software effectively GPL licensed:
+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by  
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ This package is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this package; if not, write to the Free Software
+ Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ 02111-1307, USA.
 
 On Debian systems, the complete text of the GNU General
 Public License can be found in `/usr/share/common-licenses/GPL'.
