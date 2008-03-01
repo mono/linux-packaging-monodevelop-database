@@ -2,6 +2,7 @@
 
 #export DH_VERBOSE=1
 export MONO_SHARED_DIR=$(CURDIR)
+
 include /usr/share/dpatch/dpatch.make
 
 configure: configure-stamp

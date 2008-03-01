@@ -32,4 +32,4 @@ Description: Database plugin for MonoDevelop
  MonoDevelop is a GNOME IDE primarily designed for C# and other .NET
  languages.
  .
- This package enables database SQL query features for MonoDevelop.
+ This package implements database features for MonoDevelop.
