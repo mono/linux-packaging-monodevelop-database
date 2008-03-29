@@ -1,6 +1,19 @@
+monodevelop-database (1.0+dfsg-1) unstable; urgency=low
+
+  * DFSG version of monodevelop-database 1.0
+    (deleted all pre-compiled binaries from the tarball)
+    + For the record here a list of the deleted files:
+      contrib/MySql/MySql.Data.dll
+      contrib/Sqlite/Mono.Data.Sqlite.dll
+  * New upstream release
+  * debian/control:
+    + Updated monodevelop build-dependency to >= 1.0.
+
+ -- Mirco Bauer <meebey@debian.org>  Sat, 29 Mar 2008 18:23:45 +0100
+
 monodevelop-database (0.19+dfsg-1) unstable; urgency=low
 
-  * DFSG version of monodevelop-database 0.18
+  * DFSG version of monodevelop-database 0.19
     (deleted all pre-compiled binaries from the tarball)
     + For the record here a list of the deleted files:
       contrib/MySql/MySql.Data.dll
