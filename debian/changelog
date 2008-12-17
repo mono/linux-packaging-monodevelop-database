@@ -1,3 +1,16 @@
+monodevelop-database (1.0+dfsg-3) UNRELEASED; urgency=low
+
+  * debian/rules, debian/control:
+    + Update for the Mono 2.0 transition. Build-dep on mono-devel (>= 2.0) to
+      pick up csc. Remove obsolete libmono-dev build-dep.
+    + Pass /usr/bin/csc to configure to use this compiler to build
+  * debian/watch: Mangle version (Lintian cleanup)
+  * debian/patches/link_system_libs.dpatch: Add description (Lintian cleanup)
+  * debian/copyright: Correct FSF address (Lintian cleanup)
+  * debian/control: Bump standards-version to 3.8.0 (no changes required) 
+
+ -- Iain Lane <laney@ubuntu.com>  Wed, 17 Dec 2008 22:45:42 +0000
+
 monodevelop-database (1.0+dfsg-2) unstable; urgency=low
 
   * Rebuild against against libgtksourceview2.0-cil 0.12-1

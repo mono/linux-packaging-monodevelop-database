@@ -10,7 +10,9 @@ configure-stamp: patch-stamp
 	dh_testdir
 	./configure --prefix=/usr \
 	  --mandir=\$${prefix}/share/man \
-	  --infodir=\$${prefix}/share/info
+	  --infodir=\$${prefix}/share/info \
+	  MCS=/usr/bin/csc \
+	  CSC=/usr/bin/csc
 	touch configure-stamp
 
 build: build-stamp
