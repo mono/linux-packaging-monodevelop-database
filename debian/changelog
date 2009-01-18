@@ -1,4 +1,4 @@
-monodevelop-database (1.0+dfsg-3) UNRELEASED; urgency=low
+monodevelop-database (1.0+dfsg-3) experimental; urgency=low
 
   * debian/rules, debian/control:
     + Update for the Mono 2.0 transition. Build-dep on mono-devel (>= 2.0) to
