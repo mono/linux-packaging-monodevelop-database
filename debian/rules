@@ -3,11 +3,22 @@
 #export DH_VERBOSE=1
 export MONO_SHARED_DIR=$(CURDIR)
 
+MAKEFILE = $(firstword $(MAKEFILE_LIST))
+DEBIAN_DIR = $(dir $(MAKEFILE))
+SOURCE_DIR = $(DEBIAN_DIR)/..
+
+DEB_VERSION = $(shell dpkg-parsechangelog -l$(DEBIAN_DIR)/changelog | grep ^Version | cut -d" " -f2)   
+DEB_SOURCE_NAME = $(shell dpkg-parsechangelog -l$(DEBIAN_DIR)/changelog | grep ^Source | cut -d" " -f2)
+VERSION = $(shell echo $(DEB_VERSION) | cut -d"-" -f1 | sed 's/+dfsg.*//')
+
 include /usr/share/dpatch/dpatch.make
 
 configure: configure-stamp
 configure-stamp: patch-stamp
 	dh_testdir
+	aclocal -I.
+	autoconf
+	automake --add-missing --copy
 	./configure --prefix=/usr \
 	  --mandir=\$${prefix}/share/man \
 	  --infodir=\$${prefix}/share/info \
@@ -66,5 +77,25 @@ binary-indep: build install
 binary-arch:
 
 binary: binary-arch binary-indep
+
+get-orig-source:
+	uscan \
+		--package $(DEB_SOURCE_NAME) \
+		--watchfile $(DEBIAN_DIR)/watch \
+		--upstream-version $(VERSION) \
+		--download-version $(VERSION) \
+		--destdir . \
+		--force-download \
+		--rename \
+		--repack
+	if [ -d $(DEB_SOURCE_NAME)-$(VERSION) ]; then \
+		echo "$(DEB_SOURCE_NAME)-$(VERSION) is in the way, bailing out!"; \
+		exit 1; \
+	fi
+	tar -xzf $(DEB_SOURCE_NAME)_$(VERSION).orig.tar.gz
+	rm $(DEB_SOURCE_NAME)_$(VERSION).orig.tar.gz
+	find $(DEB_SOURCE_NAME)-$(VERSION) -name "*.dll" -delete
+	tar -czf $(DEB_SOURCE_NAME)_$(VERSION)+dfsg.orig.tar.gz $(DEB_SOURCE_NAME)-$(VERSION)
+	rm -r $(DEB_SOURCE_NAME)-$(VERSION)
 
 .PHONY: build clean binary-indep binary-arch binary install configure patch unpatch

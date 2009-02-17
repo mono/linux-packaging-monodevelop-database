@@ -5,91 +5,25 @@
 ## DP: No description.
 
 @DPATCH@
-diff -urNad monodevelop-database-0.18+dfsg~/MonoDevelop.Database.Sql.MySql/Makefile.am monodevelop-database-0.18+dfsg/MonoDevelop.Database.Sql.MySql/Makefile.am
---- monodevelop-database-0.18+dfsg~/MonoDevelop.Database.Sql.MySql/Makefile.am	2008-01-22 23:05:27.000000000 +0100
-+++ monodevelop-database-0.18+dfsg/MonoDevelop.Database.Sql.MySql/Makefile.am	2008-01-22 23:05:29.000000000 +0100
+diff -urNad monodevelop-database-1.9.2~/MonoDevelop.Database.Sql.MySql/Makefile.am monodevelop-database-1.9.2/MonoDevelop.Database.Sql.MySql/Makefile.am
+--- monodevelop-database-1.9.2~/MonoDevelop.Database.Sql.MySql/Makefile.am	2009-02-04 23:32:50.000000000 +0100
++++ monodevelop-database-1.9.2/MonoDevelop.Database.Sql.MySql/Makefile.am	2009-02-17 20:30:21.000000000 +0100
 @@ -6,7 +6,7 @@
  	-r:$(top_builddir)/build/MonoDevelop.Database.Components.dll \
  	-r:$(top_builddir)/build/MonoDevelop.Database.Designer.dll \
  	-r:$(top_builddir)/build/MonoDevelop.Database.Sql.dll \
 -	-r:$(top_srcdir)/contrib/MySql/MySql.Data.dll \
 +	$(shell pkg-config --libs mysql-connector-net) \
+ 	-r:Mono.Posix \
  	-r:System \
  	-r:System.Data
- 
-@@ -18,8 +18,7 @@
- 	MySqlPooledDbConnection.cs \
- 	MySqlSchemaProvider.cs
+@@ -31,8 +31,7 @@
+ 	Widgets/MySqlColumnEditorWidget.cs \
+ 	Widgets/MySqlCreateDatabaseWidget.cs
  
 -MYSQL_FILES = \
 -	MySql.Data.dll
 +MYSQL_FILES = 
  
- RES = MonoDevelop.Database.Sql.MySql.addin.xml
- 
-diff -urNad monodevelop-database-0.18+dfsg~/MonoDevelop.Database.Sql.MySql/Makefile.in monodevelop-database-0.18+dfsg/MonoDevelop.Database.Sql.MySql/Makefile.in
---- monodevelop-database-0.18+dfsg~/MonoDevelop.Database.Sql.MySql/Makefile.in	2008-01-22 23:05:27.000000000 +0100
-+++ monodevelop-database-0.18+dfsg/MonoDevelop.Database.Sql.MySql/Makefile.in	2008-01-22 23:05:29.000000000 +0100
-@@ -165,7 +165,7 @@
- 	-r:$(top_builddir)/build/MonoDevelop.Database.Components.dll \
- 	-r:$(top_builddir)/build/MonoDevelop.Database.Designer.dll \
- 	-r:$(top_builddir)/build/MonoDevelop.Database.Sql.dll \
--	-r:$(top_srcdir)/contrib/MySql/MySql.Data.dll \
-+	$(shell pkg-config --libs mysql-connector-net) \
- 	-r:System \
- 	-r:System.Data
- 
-@@ -177,8 +177,7 @@
- 	MySqlPooledDbConnection.cs \
- 	MySqlSchemaProvider.cs
- 
--MYSQL_FILES = \
--	MySql.Data.dll
-+MYSQL_FILES = 
- 
- RES = MonoDevelop.Database.Sql.MySql.addin.xml
- SRC_MYSQL_FILES = $(addprefix $(top_srcdir)/contrib/MySql/, $(MYSQL_FILES))
-diff -urNad monodevelop-database-0.18+dfsg~/MonoDevelop.Database.Sql.Sqlite/Makefile.am monodevelop-database-0.18+dfsg/MonoDevelop.Database.Sql.Sqlite/Makefile.am
---- monodevelop-database-0.18+dfsg~/MonoDevelop.Database.Sql.Sqlite/Makefile.am	2008-01-22 23:05:27.000000000 +0100
-+++ monodevelop-database-0.18+dfsg/MonoDevelop.Database.Sql.Sqlite/Makefile.am	2008-01-22 23:05:40.000000000 +0100
-@@ -6,7 +6,7 @@
- 	-r:$(top_builddir)/build/MonoDevelop.Database.Components.dll \
- 	-r:$(top_builddir)/build/MonoDevelop.Database.Designer.dll \
- 	-r:$(top_builddir)/build/MonoDevelop.Database.Sql.dll \
--	-r:$(top_srcdir)/contrib/Sqlite/Mono.Data.Sqlite.dll \
-+	-r:Mono.Data.Sqlite.dll \
- 	-r:Mono.Data \
- 	-r:System \
- 	-r:System.Data
-@@ -21,8 +21,7 @@
- 
- RES = MonoDevelop.Database.Sql.Sqlite.addin.xml
- 
--SQLITE_FILES = \
--	Mono.Data.Sqlite.dll
-+SQLITE_FILES = 
- 
- SRC_SQLITE_FILES = $(addprefix $(top_srcdir)/contrib/Sqlite/, $(SQLITE_FILES))
- BUILD_SQLITE_FILES = $(addprefix $(ADDIN_BUILD)/, $(notdir $(SQLITE_FILES)))
-diff -urNad monodevelop-database-0.18+dfsg~/MonoDevelop.Database.Sql.Sqlite/Makefile.in monodevelop-database-0.18+dfsg/MonoDevelop.Database.Sql.Sqlite/Makefile.in
---- monodevelop-database-0.18+dfsg~/MonoDevelop.Database.Sql.Sqlite/Makefile.in	2008-01-22 23:05:27.000000000 +0100
-+++ monodevelop-database-0.18+dfsg/MonoDevelop.Database.Sql.Sqlite/Makefile.in	2008-01-22 23:05:51.000000000 +0100
-@@ -165,7 +165,7 @@
- 	-r:$(top_builddir)/build/MonoDevelop.Database.Components.dll \
- 	-r:$(top_builddir)/build/MonoDevelop.Database.Designer.dll \
- 	-r:$(top_builddir)/build/MonoDevelop.Database.Sql.dll \
--	-r:$(top_srcdir)/contrib/Sqlite/Mono.Data.Sqlite.dll \
-+	-r:Mono.Data.Sqlite.dll \
- 	-r:Mono.Data \
- 	-r:System \
- 	-r:System.Data
-@@ -179,8 +179,7 @@
- 	SqliteSchemaProvider.cs
- 
- RES = MonoDevelop.Database.Sql.Sqlite.addin.xml
--SQLITE_FILES = \
--	Mono.Data.Sqlite.dll
-+SQLITE_FILES = 
- 
- SRC_SQLITE_FILES = $(addprefix $(top_srcdir)/contrib/Sqlite/, $(SQLITE_FILES))
- BUILD_SQLITE_FILES = $(addprefix $(ADDIN_BUILD)/, $(notdir $(SQLITE_FILES)))
+ RES =  \
+ 	gtk-gui/gui.stetic \

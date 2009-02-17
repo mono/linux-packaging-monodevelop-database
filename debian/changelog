@@ -1,3 +1,17 @@
+monodevelop-database (1.9.2+dfsg-1) experimental; urgency=low
+
+  * DFSG version of monodevelop-database 1.9.2
+    (deleted all pre-compiled binaries from the tarball)
+    + For the record here a list of the deleted files:
+      contrib/MySql/MySql.Data.dll
+  * debian/rules:
+    + Implemented get-orig-source target.
+    + Refresh the build-system in configure target.
+  * debian/control:
+    + Added autoconf, automake and autotools-dev to build-deps.
+
+ -- Mirco Bauer <meebey@debian.org>  Tue, 17 Feb 2009 20:36:48 +0100
+
 monodevelop-database (1.0+dfsg-3) experimental; urgency=low
 
   * debian/rules, debian/control:
