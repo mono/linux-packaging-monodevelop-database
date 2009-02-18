@@ -9,8 +9,9 @@ monodevelop-database (1.9.2+dfsg-1) experimental; urgency=low
     + Refresh the build-system in configure target.
   * debian/control:
     + Added autoconf, automake and autotools-dev to build-deps.
+    + Bumped monodevelop build-dep to >= 1.9.2.
 
- -- Mirco Bauer <meebey@debian.org>  Tue, 17 Feb 2009 20:36:48 +0100
+ -- Mirco Bauer <meebey@debian.org>  Wed, 18 Feb 2009 20:30:31 +0100
 
 monodevelop-database (1.0+dfsg-3) experimental; urgency=low
 
