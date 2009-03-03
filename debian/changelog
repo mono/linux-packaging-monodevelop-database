@@ -1,3 +1,9 @@
+monodevelop-database (1.9.2+dfsg-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Mirco Bauer <meebey@debian.org>  Tue, 03 Mar 2009 23:36:38 +0100
+
 monodevelop-database (1.9.2+dfsg-1) experimental; urgency=low
 
   * DFSG version of monodevelop-database 1.9.2
