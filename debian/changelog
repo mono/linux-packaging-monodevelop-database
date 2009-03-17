@@ -1,3 +1,17 @@
+monodevelop-database (1.9.3+dfsg-1) unstable; urgency=low
+
+  * NOT RELEASED YET
+  * FIXMEPLX: debian/control << a~ + +dfsg teh sucks!
+  * DFSG version of monodevelop-database 1.9.3
+    (deleted all pre-compiled binaries from the tarball)
+    + For the record here a list of the deleted files:
+      contrib/MySql/MySql.Data.dll
+  * New upstream (bugfix) release.
+  * debian/watch:
+    + Updated to use directory of ftp/http download server.
+
+ -- Mirco Bauer <meebey@debian.org>  Tue, 17 Mar 2009 23:26:35 +0100
+
 monodevelop-database (1.9.2+dfsg-2) unstable; urgency=low
 
   * Upload to unstable.
