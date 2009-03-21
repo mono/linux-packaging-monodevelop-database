@@ -1,12 +1,14 @@
 monodevelop-database (1.9.3+dfsg-1) unstable; urgency=low
 
-  * NOT RELEASED YET
-  * FIXMEPLX: debian/control << a~ + +dfsg teh sucks!
   * DFSG version of monodevelop-database 1.9.3
     (deleted all pre-compiled binaries from the tarball)
     + For the record here a list of the deleted files:
       contrib/MySql/MySql.Data.dll
   * New upstream (bugfix) release.
+  * debian/control:
+    + Tighten binary dependency on monodevelop, to ensure the plugin is only
+      installed using the same monodevelop version, as the plugins are not
+      forward compatible.
   * debian/watch:
     + Updated to use directory of ftp/http download server.
 
