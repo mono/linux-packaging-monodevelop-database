@@ -1,0 +1,7 @@
+The upstream tarball for this application has been altered to remove 
+(unneeded) binary-only components. The list of files removed is as follows:
+
+      contrib/MySql/MySql.Data.dll
+
+To create your own copy of this modified tarball, use the "get-orig-source" 
+rule in the debian/rules makefile.
