@@ -10,6 +10,9 @@ monodevelop-database (2.0+dfsg-1) UNRELEASED; urgency=low
     + For the record here a list of the deleted files:
       contrib/MySql/MySql.Data.dll
 
+  [ Iain Lane ]
+  * Bump MD build-dep to 2.0 as required by configure
+
  -- Jo Shields <directhex@apebox.org>  Thu, 02 Apr 2009 22:54:06 +0100
 
 monodevelop-database (1.9.3+dfsg-1) unstable; urgency=low
