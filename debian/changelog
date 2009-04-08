@@ -1,4 +1,4 @@
-monodevelop-database (2.0+dfsg-1) UNRELEASED; urgency=low
+monodevelop-database (2.0+dfsg-1) unstable; urgency=low
 
   [ Stefan Ebner ]
   * Bump Standards version to 3.8.1
