@@ -1,9 +1,9 @@
-monodevelop-database (2.0+dfsg-2) UNRELEASED; urgency=low
+monodevelop-database (2.0+dfsg-2) unstable; urgency=low
 
   * debian/control:
     + Rebuild against libmysql6.0-cil
     + Update to Standards 3.8.2 (no changes needed)
-    + Add explicit build-dep on libmono-data2.0-cil
+    + Add explicit build-dep on libmono-data2.0-cil (Closes: #534018)
   * debian/rules:
     + Deterministic get-orig-source rule (persistent md5sum)
 
