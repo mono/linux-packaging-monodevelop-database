@@ -7,6 +7,9 @@ monodevelop-database (2.1.1+dfsg-1) UNRELEASED; urgency=low
     + Policy-compliant get-orig-source location
     + Fix timestamp on get-orig-source to 2009-10-18 to reduce
       console spew
+  * debian/rules,
+    debian/control:
+    + Use mono-csc from mono-devel 2.4.2.3+
 
  -- Jo Shields <directhex@apebox.org>  Sun, 18 Oct 2009 23:45:05 +0100
 

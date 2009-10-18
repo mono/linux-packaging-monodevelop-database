@@ -22,8 +22,8 @@ configure-stamp: patch-stamp
 	./configure --prefix=/usr \
 	  --mandir=\$${prefix}/share/man \
 	  --infodir=\$${prefix}/share/info \
-	  MCS=/usr/bin/csc \
-	  CSC=/usr/bin/csc
+	  MCS=/usr/bin/mono-csc \
+	  CSC=/usr/bin/mono-csc
 	touch configure-stamp
 
 build: build-stamp
