@@ -1,5 +1,6 @@
 monodevelop-database (2.1.1+dfsg-1) UNRELEASED; urgency=low
 
+  [ Jo Shields ]
   * New upstream release
   * debian/control:
     + Add dependency on monodevelop-versioncontrol and monodevelop-nunit
@@ -10,6 +11,11 @@ monodevelop-database (2.1.1+dfsg-1) UNRELEASED; urgency=low
   * debian/rules,
     debian/control:
     + Use mono-csc from mono-devel 2.4.2.3+
+
+  [ Mirco Bauer ]
+  * debian/control:
+    + Bumped Standards-Version to 3.8.3 (no changes needed)
+    + Changed Section to cli-mono to match archive overrides.
 
  -- Jo Shields <directhex@apebox.org>  Sun, 18 Oct 2009 23:45:05 +0100
 

@@ -1,5 +1,5 @@
 Source: monodevelop-database
-Section: devel
+Section: cli-mono
 Priority: optional
 Maintainer: Mirco Bauer <meebey@debian.org>
 Build-Depends: debhelper (>= 5), dpatch
@@ -21,7 +21,7 @@ Build-Depends-Indep: cli-common-dev (>= 0.5.4),
  libmono-data2.0-cil,
  libmono-addins0.2-cil (>= 0.3),
  libmono-addins-gui0.2-cil (>= 0.3)
-Standards-Version: 3.8.2
+Standards-Version: 3.8.3
 Homepage: http://www.monodevelop.com/
 Vcs-Browser: http://svn.debian.org/wsvn/pkg-cli-apps/packages/monodevelop-database/trunk/
 Vcs-Svn: svn://svn.debian.org/svn/pkg-cli-apps/packages/monodevelop-database/trunk/
