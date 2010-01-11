@@ -1,3 +1,12 @@
+monodevelop-database (2.2+dfsg-1) UNRELEASED; urgency=low
+
+  * New upstream release
+  * debian/control:
+    + Use -dev packages
+    + Use mono-devel 2.4.3 and associated removal of library build-deps
+
+ -- Jo Shields <directhex@apebox.org>  Sun, 10 Jan 2010 14:15:33 +0000
+
 monodevelop-database (2.1.1+dfsg-1) unstable; urgency=low
 
   [ Jo Shields ]
