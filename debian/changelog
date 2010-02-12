@@ -1,3 +1,13 @@
+monodevelop-database (2.2+dfsg-2) UNRELEASED; urgency=low
+
+  * Rebuild against MonoDevelop 2.2.1
+  * debian/control:
+    + No-change bump to Standards 3.8.4
+    + Build-depend on MonoDevelop 2.2.1
+    + Fiddle binary dependencies to depend on MonoDevelop 2.2.1
+
+ -- Jo Shields <directhex@apebox.org>  Fri, 12 Feb 2010 09:02:46 +0000
+
 monodevelop-database (2.2+dfsg-1) unstable; urgency=low
 
   * New upstream release
