@@ -1,4 +1,4 @@
-monodevelop-database (2.2+dfsg-3) UNRELEASED; urgency=low
+monodevelop-database (2.2+dfsg-3) unstable; urgency=low
 
   * Rebuild against MonoDevelop 2.2.2
   * debian/control:
