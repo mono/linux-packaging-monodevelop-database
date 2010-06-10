@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Mirco Bauer <meebey@debian.org>
 Build-Depends: debhelper (>= 5), dpatch
 Build-Depends-Indep: cli-common-dev (>= 0.5.4),
- monodevelop (>= 2.2.1),
+ monodevelop (>= 2.2.2),
  monodevelop-versioncontrol (>= 2.2),
  monodevelop-nunit (>= 2.2),
  mono-devel (>= 2.4.3),
@@ -26,8 +26,8 @@ Replaces: monodevelop (<< 0.10)
 Conflicts: monodevelop-query
 Provides: monodevelop-query
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${cli:Depends},
- monodevelop (>= ${misc:Version}.1),
- monodevelop (<< ${misc:Version}.1.)
+ monodevelop (>= ${misc:Version}.2),
+ monodevelop (<< ${misc:Version}.2.)
 Description: Database plugin for MonoDevelop
  MonoDevelop is a GNOME IDE primarily designed for C# and other .NET
  languages.
