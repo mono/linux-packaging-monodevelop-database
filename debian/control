@@ -4,9 +4,9 @@ Priority: optional
 Maintainer: Mirco Bauer <meebey@debian.org>
 Build-Depends: debhelper (>= 5), dpatch
 Build-Depends-Indep: cli-common-dev (>= 0.5.4),
- monodevelop (>= 2.2.2),
- monodevelop-versioncontrol (>= 2.2),
- monodevelop-nunit (>= 2.2),
+ monodevelop (>= 2.4),
+ monodevelop-versioncontrol (>= 2.4),
+ monodevelop-nunit (>= 2.4),
  mono-devel (>= 2.4.3),
  autoconf,
  automake,
