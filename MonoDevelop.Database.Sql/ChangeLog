@@ -1,3 +1,39 @@
+2010-03-22  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.Sql.addin.xml: Bumped MD version.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.Sql.csproj: Flush.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* QueryService.cs:
+	* MonoDevelop.Database.Sql.csproj: Merged MD.Projects into
+	  MD.Core, and MD.Projects.Gui, MD.Core.Gui and MD.Components
+	  into MD.Ide.
+
+2010-02-15  Luciano N. Callero  <lnc19@hotmail.com>
+
+	* IDbLinq.cs:
+	* Makefile.am:
+	* SqlMetalServices.cs:
+	* SqlMetalExecException.cs:
+	* MonoDevelop.Database.Sql.csproj: Implement SqlMetal Services
+
+2010-02-12  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.Sql.csproj: Flush.
+
+2009-11-11  Luciano N. Callero  <lnc19@hotmail.com>
+
+	* MonoDevelop.Database.Sql.csproj: Target runtime from 2.0 to
+	  3.5.
+
+	* Providers/ISchemaProvider.cs:
+	* Providers/AbstractSchemaProvider.cs: Implement Query:
+	  Select, Update, Insert, Delete.
+
 2009-10-30  Lluis Sanchez Gual  <lluis@novell.com>
 
 	* AssemblyInfo.cs:

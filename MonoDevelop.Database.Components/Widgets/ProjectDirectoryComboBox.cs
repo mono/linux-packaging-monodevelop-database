@@ -28,10 +28,9 @@ using System;
 using System.IO;
 using System.Collections.Generic;
 using MonoDevelop.Core;
-using MonoDevelop.Core.Gui;
 using MonoDevelop.Ide.Gui;
+using MonoDevelop.Ide;
 using MonoDevelop.Projects;
-using MonoDevelop.Projects.Gui;
 
 namespace MonoDevelop.Database.Components
 {
@@ -45,7 +44,7 @@ namespace MonoDevelop.Database.Components
 		{
 			store = new TreeStore (typeof (Gdk.Pixbuf), typeof (string), typeof (Project), typeof (string));
 			
-			CellRendererPixbuf pixbuf = new CellRendererPixbuf ();
+			var pixbuf = new CellRendererPixbuf ();
 			CellRendererText text = new CellRendererText ();
 
 			this.PackStart (pixbuf, false);
@@ -84,7 +83,7 @@ namespace MonoDevelop.Database.Components
 				TreeIter activeIter = TreeIter.Zero;
 
 				//TODO: add support for recursive combines
-				foreach (SolutionItem entry in cmb.Items) {
+				foreach (Project entry in IdeApp.Workspace.GetAllProjects ()) {
 					if (!(entry is DotNetProject))
 						continue;
 				
@@ -92,9 +91,9 @@ namespace MonoDevelop.Database.Components
 					Gdk.Pixbuf pixbuf = null;
 					
 					if (proj is DotNetProject && (proj as DotNetProject).LanguageBinding == null) {
-						pixbuf = MonoDevelop.Core.Gui.ImageService.GetPixbuf (Gtk.Stock.DialogError);
+						pixbuf = ImageService.GetPixbuf (Gtk.Stock.DialogError);
 					} else {
-						pixbuf = MonoDevelop.Core.Gui.ImageService.GetPixbuf (proj.StockIcon, IconSize.Menu);
+						pixbuf = ImageService.GetPixbuf (proj.StockIcon, IconSize.Menu);
 					}
 					
 					TreeIter iter = store.AppendValues (pixbuf, "<b>" + proj.Name + "</b>", proj, proj.BaseDirectory);
@@ -117,12 +116,14 @@ namespace MonoDevelop.Database.Components
 		{
 			foreach (string dir in Directory.GetDirectories (parentDir)) {
 				string name = System.IO.Path.GetFileName (dir);
+				DirectoryInfo info = new DirectoryInfo (dir);
+				
 				
 				//TODO: use the ProjectFile information
-				if (name == "gtk-gui" || name == "bin")
+				if (name == "gtk-gui" || name == "bin" || info.Attributes.ToString ().Contains ("Hidden"))
 					continue;
 				
-				Gdk.Pixbuf pixbuf = MonoDevelop.Core.Gui.ImageService.GetPixbuf (Gtk.Stock.Directory);
+				Gdk.Pixbuf pixbuf = ImageService.GetPixbuf (Gtk.Stock.Directory);
 				TreeIter iter = store.AppendValues (parent, pixbuf, name, project, dir);
 						
 				PopulateCombo (iter, dir, project);

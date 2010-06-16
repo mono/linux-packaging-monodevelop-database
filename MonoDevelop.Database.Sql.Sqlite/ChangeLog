@@ -1,3 +1,59 @@
+2010-03-29  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* Makefile.am:
+	* MonoDevelop.Database.Sql.Sqlite.csproj: Remove unrequired
+	  reference. Patch by Jay R. Wren.
+
+2010-03-22  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* AssemblyInfo.cs:
+	* MonoDevelop.Database.Sql.Sqlite.addin.xml: Bumped MD
+	  version.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.Sql.Sqlite.csproj: Flush.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.Sql.Sqlite.csproj: Remove
+	  mono.addins.targets import.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* SqliteDbFactory.cs:
+	* Dialogs/SqliteCreateDatabaseDialog.cs:
+	* MonoDevelop.Database.Sql.Sqlite.csproj:
+	* Widgets/SqliteConnectionSettingsWidget.cs:
+	* MonoDevelop.Database.Sql.Sqlite.addin.xml:
+	* Dialogs/SqliteDatabaseConnectionSettingsDialog.cs: Merged
+	  MD.Projects into MD.Core, and MD.Projects.Gui, MD.Core.Gui
+	  and MD.Components into MD.Ide.
+
+2010-02-15  Luciano N. Callero  <lnc19@hotmail.com>
+
+	* Makefile.am:
+	* SqliteDbFactory.cs:
+	* MonoDevelop.Database.Sql.Sqlite.csproj: Implement IDbLinq
+	  interface for SqlMetal services.
+	Flush changes.
+
+2010-02-12  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* gtk-gui/generated.cs:
+	* MonoDevelop.Database.Sql.Sqlite.csproj: Flush.
+
+2009-11-11  Luciano N. Callero  <lnc19@hotmail.com>
+
+	* MonoDevelop.Database.Sql.Sqlite.csproj: Target runtime from
+	  2.0 to 3.5.
+
+	* Makefile.am:
+	* SqliteSyntaxMode.xml:
+	* SqliteSchemaProvider.cs:
+	* MonoDevelop.Database.Sql.Sqlite.addin.xml: Implement Syntax
+	  mode by provider.
+
 2009-11-03  Luciano N. Callero  <lnc19@hotmail.com>
 
 	* Dialogs/SqliteDatabaseConnectionSettingsDialog.cs: Fixe edit

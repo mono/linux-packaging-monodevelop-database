@@ -1,3 +1,61 @@
+2010-03-22  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* AssemblyInfo.cs:
+	* MonoDevelop.Database.Sql.MySql.addin.xml: Bumped MD version.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.Sql.MySql.csproj: Flush.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.Sql.MySql.csproj: Remove
+	  mono.addins.targets import.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MySqlDbFactory.cs:
+	* Dialogs/MySqlCreateDatabaseDialog.cs:
+	* MonoDevelop.Database.Sql.MySql.csproj:
+	* MonoDevelop.Database.Sql.MySql.addin.xml: Merged MD.Projects
+	  into MD.Core, and MD.Projects.Gui, MD.Core.Gui and
+	  MD.Components into MD.Ide.
+
+2010-02-15  Luciano N. Callero  <lnc19@hotmail.com>
+
+	* MySqlDbFactory.cs:
+	* MonoDevelop.Database.Sql.MySql.csproj: Implement IDbLinq
+	  interface for SqlMetal services.
+	Flush changes.
+
+2010-02-12  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.Sql.MySql.csproj: Fix gettext class.
+
+	* gtk-gui/gui.stetic:
+	* gtk-gui/objects.xml:
+	* gtk-gui/generated.cs:
+	* gtk-gui/MonoDevelop.Database.Sql.MySql.MySqlColumnEditorWidget.cs:
+	* gtk-gui/MonoDevelop.Database.Sql.MySql.MySqlCreateDatabaseWidget.cs:
+	  Flush.
+
+2010-02-03  Luciano N. Callero  <lnc19@hotmail.com>
+
+	* gtk-gui/gui.stetic:
+	* Widgets/MySqlCreateDatabaseWidget.cs:
+	* MonoDevelop.Database.Sql.MySql.csproj: - Flush changes.
+
+2009-11-11  Luciano N. Callero  <lnc19@hotmail.com>
+
+	* Makefile.am:
+	* MySqlSyntaxMode.xml:
+	* MySqlSchemaProvider.cs:
+	* MonoDevelop.Database.Sql.MySql.addin.xml: Implement Syntax
+	  mode by provider.
+
+	* MonoDevelop.Database.Sql.MySql.csproj: Target runtime from
+	  2.0 to 3.5.
+
 2009-11-04  Luciano N. Callero  <lnc19@hotmail.com>
 
 	* gtk-gui/gui.stetic:

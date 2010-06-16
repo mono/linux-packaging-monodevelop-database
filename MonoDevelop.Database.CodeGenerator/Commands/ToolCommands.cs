@@ -27,8 +27,7 @@
 using Gtk;
 using System;
 using MonoDevelop.Database.Sql;
-using MonoDevelop.Core.Gui;
-using MonoDevelop.Ide.Gui;
+using MonoDevelop.Ide;
 using MonoDevelop.Ide.Gui.Pads;
 using MonoDevelop.Projects;
 using MonoDevelop.Components.Commands;
@@ -38,16 +37,19 @@ namespace MonoDevelop.Database.CodeGenerator
 {
 	public enum ToolCommands
 	{
-		GenerateDataClasses
+		GenerateDataClasses,
+		GenerateDataClassesNew
 	}
 	
 	public class GenerateDataClassesHandler : CommandHandler
 	{
 		protected override void Run ()
 		{
-			GenerateDataClassesDialog dlg = new GenerateDataClassesDialog ();
+			
+			GenerateDataClass dlg = new GenerateDataClass ();
 			try {
-				dlg.Run ();
+				if (dlg.Run () == (int)ResponseType.Ok)
+					dlg.GenerateClass ();
 			} finally {
 				dlg.Destroy ();
 			}

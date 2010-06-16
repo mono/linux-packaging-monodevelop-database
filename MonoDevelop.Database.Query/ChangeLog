@@ -1,3 +1,58 @@
+2010-04-30  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* Makefile.am: Added missing files to EXTRA_DIST.
+
+2010-03-22  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* AssemblyInfo.cs:
+	* MonoDevelop.Database.Query.addin.xml: Bumped MD version.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.Query.csproj: Flush.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.Query.csproj: Remove
+	  mono.addins.targets import.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* SqlQueryView.cs:
+	* QueryResultView.cs:
+	* Commands/ToolCommands.cs:
+	* MonoDevelop.Database.Query.csproj:
+	* MonoDevelop.Database.Query.addin.xml: Merged MD.Projects
+	  into MD.Core, and MD.Projects.Gui, MD.Core.Gui and
+	  MD.Components into MD.Ide.
+
+2010-02-18  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* Makefile.am:
+	* MonoDevelop.Database.Query.csproj:
+	* MonoDevelop.Database.Query.addin.xml: Moved icons from
+	  resources to standalone files.
+
+2010-02-12  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* gtk-gui/generated.cs:
+	* MonoDevelop.Database.Query.csproj: Flush.
+
+2010-02-03  Luciano N. Callero  <lnc19@hotmail.com>
+
+	* MonoDevelop.Database.Query.csproj: - Flush changes.
+
+2010-01-26  Michael Hutchinson  <mhutchinson@novell.com>
+
+	* SqlQueryDisplayBinding.cs: Track DisplayBinding API.
+
+2009-11-11  Luciano N. Callero  <lnc19@hotmail.com>
+
+	* SqlQueryView.cs: Implement Syntax mode by provider.
+
+	* MonoDevelop.Database.Query.csproj: Target runtime from 2.0
+	  to 3.5.
+
 2009-11-04  Luciano N. Callero  <lnc19@hotmail.com>
 
 	* SqlQueryView.cs: Remove handlers

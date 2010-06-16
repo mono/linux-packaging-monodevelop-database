@@ -1,3 +1,98 @@
+2010-03-22  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* AssemblyInfo.cs:
+	* MonoDevelop.Database.Sql.SqlServer.addin.xml: Bumped MD
+	  version.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.Sql.SqlServer.csproj: Flush.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.Sql.SqlServer.csproj: Remove
+	  mono.addins.targets import.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* SqlServerDbFactory.cs:
+	* Dialogs/SqlServerCreateDatabaseDialog.cs:
+	* MonoDevelop.Database.Sql.SqlServer.csproj:
+	* MonoDevelop.Database.Sql.SqlServer.addin.xml: Merged
+	  MD.Projects into MD.Core, and MD.Projects.Gui, MD.Core.Gui
+	  and MD.Components into MD.Ide.
+
+2010-02-18  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.Sql.SqlServer.csproj: Update.
+
+2010-02-15  Luciano N. Callero  <lnc19@hotmail.com>
+
+	* SqlServerDbFactory.cs:
+	* MonoDevelop.Database.Sql.SqlServer.csproj: Implement IDbLinq
+	  interface for SqlMetal services.
+	Flush changes.
+
+2010-02-12  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* gtk-gui/gui.stetic:
+	* gtk-gui/generated.cs:
+	* gtk-gui/MonoDevelop.Database.Sql.SqlServer.SqlServerColumnEditorWidget.cs:
+	* gtk-gui/MonoDevelop.Database.Sql.SqlServer.SqlServerCreateDatabaseWidget.cs:
+	  Flush.
+
+	* MonoDevelop.Database.Sql.SqlServer.csproj: Fix gettext
+	  class.
+
+2010-02-03  Luciano N. Callero  <lnc19@hotmail.com>
+
+	* Collections:
+	* Dialogs/SqlServerCreateDatabaseDialog.cs:
+	* Collections/SqlServerCollationSchemaCollection.cs: Sql
+	  Server Provider Collections.
+
+	* SqlServerConnectionProvider.cs: Remove SCWL.
+
+	* SqlServerSchemaProvider.cs: Implement Drop Database.
+
+	* SysObjects.xml: XML Sys Objects.
+
+	* Schema/SqlServerCollationSchema.cs: Collation Schema.
+
+	* Schema/SqlServerDatabaseSchema.cs: Database Schema.
+
+	* Widgets/SqlServerCreateDatabaseWidget.cs: Create Database
+	  changes.
+
+	* gtk-gui/MonoDevelop.Database.Sql.SqlServer.SqlServerCreateDatabaseWidget.cs:
+	  Create Database Widget implementation.
+
+	* Makefile.am:
+	* gtk-gui/gui.stetic:
+	* gtk-gui/objects.xml:
+	* MonoDevelop.Database.Sql.SqlServer.csproj: Flush Changes.
+
+	* SqlServerGuiProvider.cs: Change create database dialog call.
+
+2009-11-12  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* Makefile.am:
+	* MonoDevelop.Database.Sql.SqlServer.csproj: Remove unused
+	  file.
+
+	* gtk-gui/gui.stetic: Flush.
+
+2009-11-11  Luciano N. Callero  <lnc19@hotmail.com>
+
+	* Makefile.am:
+	* SqlServerSyntaxMode.xml:
+	* SqlServerSchemaProvider.cs:
+	* MonoDevelop.Database.Sql.SqlServer.addin.xml: Implement
+	  Syntax mode by provider.
+
+	* MonoDevelop.Database.Sql.SqlServer.csproj: Target runtime
+	  from 2.0 to 3.5.
+
 2009-10-30  Lluis Sanchez Gual  <lluis@novell.com>
 
 	* AssemblyInfo.cs:

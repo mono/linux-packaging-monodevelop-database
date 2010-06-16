@@ -26,14 +26,7 @@
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 //
 
-using Gtk;
-using System;
 using MonoDevelop.Database.Sql;
-using MonoDevelop.Core;
-using MonoDevelop.Core.Gui;
-using MonoDevelop.Ide.Gui;
-using MonoDevelop.Ide.Gui.Pads;
-using MonoDevelop.Components.Commands;
 using MonoDevelop.Database.Components;
 
 namespace MonoDevelop.Database.ConnectionManager
@@ -75,7 +68,27 @@ namespace MonoDevelop.Database.ConnectionManager
 		DropProcedure,
 		DropConstraint,
 		DropUser,
-		DropTrigger
+		DropTrigger,
+		
+		ShowTableDefinitionInCurrentWindow,
+		ShowTableDefinitionInNewWindow,
+		ShowTableDefinitionInClipboard,
+		QuerySelectInCurrentWindow,
+		QuerySelectInNewWindow,
+		QuerySelectInClipboard,
+		QueryInsertInCurrentWindow,
+		QueryInsertInNewWindow,
+		QueryInsertInClipboard,
+		QueryUpdateInNewWindow,
+		QueryUpdateInCurrentWindow,
+		QueryUpdateInClipboard,
+		QueryDeleteInNewWindow,
+		QueryDeleteInCurrentWindow,
+		QueryDeleteInClipboard,
+		TableDefinitionInCurrentWindow,
+		TableDefinitionInNewWindow,
+		TableDefinitionInClipboard,
+		ExecProcedure
 	}
 	
 	internal class AddConnectionHandler : AbstractDatabaseProviderList

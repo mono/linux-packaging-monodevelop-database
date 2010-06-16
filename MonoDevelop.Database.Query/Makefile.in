@@ -47,9 +47,10 @@ am__vpath_adj = case $$p in \
     *) f=$$p;; \
   esac;
 am__strip_dir = `echo $$p | sed -e 's|^.*/||'`;
-am__installdirs = "$(DESTDIR)$(assemblydir)"
+am__installdirs = "$(DESTDIR)$(assemblydir)" "$(DESTDIR)$(iconsdir)"
 assemblyDATA_INSTALL = $(INSTALL_DATA)
-DATA = $(assembly_DATA)
+iconsDATA_INSTALL = $(INSTALL_DATA)
+DATA = $(assembly_DATA) $(icons_DATA)
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 ACLOCAL = @ACLOCAL@
 AMTAR = @AMTAR@
@@ -172,6 +173,19 @@ REFS = \
 
 RES = \
 	gtk-gui/gui.stetic \
+	MonoDevelop.Database.Query.addin.xml
+
+FILES = \
+	AssemblyInfo.cs \
+	Commands/ToolCommands.cs \
+	gtk-gui/generated.cs \
+	ISqlQueryEditorView.cs \
+	QueryResultView.cs \
+	SqlQueryDisplayBinding.cs \
+	SqlQueryTextEditorExtension.cs \
+	SqlQueryView.cs
+
+DATA_FILES = \
 	icons/Icons.16x16.Database.Column.Key.png \
 	icons/Icons.16x16.Database.Column.png \
 	icons/Icons.16x16.Database.Connection.Error.png \
@@ -196,23 +210,15 @@ RES = \
 	icons/Icons.16x16.Database.View.Error.png \
 	icons/Icons.16x16.Database.View.png \
 	icons/Icons.16x16.Database.View.Source.png \
-	icons/Icons.16x16.Database.Views.png \
-	MonoDevelop.Database.Query.addin.xml
+	icons/Icons.16x16.Database.Views.png
 
-FILES = \
-	AssemblyInfo.cs \
-	Commands/ToolCommands.cs \
-	gtk-gui/generated.cs \
-	ISqlQueryEditorView.cs \
-	QueryResultView.cs \
-	SqlQueryDisplayBinding.cs \
-	SqlQueryTextEditorExtension.cs \
-	SqlQueryView.cs
-
+DATA_FILE_BUILD = $(addprefix $(ADDIN_BUILD)/, $(DATA_FILES))
 assemblydir = $(MD_ADDIN_DIR)/MonoDevelop.Database
 assembly_DATA = $(ASSEMBLY) $(ASSEMBLY).mdb
-CLEANFILES = $(ASSEMBLY) $(ASSEMBLY).mdb
-EXTRA_DIST = $(FILES) $(RES)
+iconsdir = $(MD_ADDIN_DIR)/MonoDevelop.Database/icons
+icons_DATA = $(DATA_FILE_BUILD)
+CLEANFILES = $(ASSEMBLY) $(ASSEMBLY).mdb $(DATA_FILE_BUILD)
+EXTRA_DIST = $(FILES) $(RES) $(DATA_FILES)
 build_sources = $(addprefix $(srcdir)/, $(FILES)) $(GENERATED_FILES)
 build_resources = $(addprefix $(srcdir)/, $(RES))
 build_test_sources = $(addprefix $(srcdir)/, $(TESTFILES)) $(GENERATED_FILES)
@@ -265,6 +271,23 @@ uninstall-assemblyDATA:
 	  echo " rm -f '$(DESTDIR)$(assemblydir)/$$f'"; \
 	  rm -f "$(DESTDIR)$(assemblydir)/$$f"; \
 	done
+install-iconsDATA: $(icons_DATA)
+	@$(NORMAL_INSTALL)
+	test -z "$(iconsdir)" || $(MKDIR_P) "$(DESTDIR)$(iconsdir)"
+	@list='$(icons_DATA)'; for p in $$list; do \
+	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+	  f=$(am__strip_dir) \
+	  echo " $(iconsDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(iconsdir)/$$f'"; \
+	  $(iconsDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(iconsdir)/$$f"; \
+	done
+
+uninstall-iconsDATA:
+	@$(NORMAL_UNINSTALL)
+	@list='$(icons_DATA)'; for p in $$list; do \
+	  f=$(am__strip_dir) \
+	  echo " rm -f '$(DESTDIR)$(iconsdir)/$$f'"; \
+	  rm -f "$(DESTDIR)$(iconsdir)/$$f"; \
+	done
 tags: TAGS
 TAGS:
 
@@ -302,7 +325,7 @@ check-am: all-am
 check: check-am
 all-am: Makefile $(DATA)
 installdirs:
-	for dir in "$(DESTDIR)$(assemblydir)"; do \
+	for dir in "$(DESTDIR)$(assemblydir)" "$(DESTDIR)$(iconsdir)"; do \
 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
 	done
 install: install-am
@@ -348,7 +371,7 @@ info: info-am
 
 info-am:
 
-install-data-am: install-assemblyDATA
+install-data-am: install-assemblyDATA install-iconsDATA
 
 install-dvi: install-dvi-am
 
@@ -382,7 +405,7 @@ ps: ps-am
 
 ps-am:
 
-uninstall-am: uninstall-assemblyDATA
+uninstall-am: uninstall-assemblyDATA uninstall-iconsDATA
 
 .MAKE: install-am install-strip
 
@@ -390,12 +413,13 @@ uninstall-am: uninstall-assemblyDATA
 	distclean-generic distdir dvi dvi-am html html-am info info-am \
 	install install-am install-assemblyDATA install-data \
 	install-data-am install-dvi install-dvi-am install-exec \
-	install-exec-am install-html install-html-am install-info \
-	install-info-am install-man install-pdf install-pdf-am \
-	install-ps install-ps-am install-strip installcheck \
-	installcheck-am installdirs maintainer-clean \
+	install-exec-am install-html install-html-am install-iconsDATA \
+	install-info install-info-am install-man install-pdf \
+	install-pdf-am install-ps install-ps-am install-strip \
+	installcheck installcheck-am installdirs maintainer-clean \
 	maintainer-clean-generic mostlyclean mostlyclean-generic pdf \
-	pdf-am ps ps-am uninstall uninstall-am uninstall-assemblyDATA
+	pdf-am ps ps-am uninstall uninstall-am uninstall-assemblyDATA \
+	uninstall-iconsDATA
 
 
 all: $(ASSEMBLY)
@@ -403,6 +427,10 @@ all: $(ASSEMBLY)
 $(ASSEMBLY): $(build_sources) $(build_resources)
 	mkdir -p $(ADDIN_BUILD)
 	$(CSC) $(CSC_FLAGS) $(REFS) $(build_resources:%=/resource:%) $(build_sources) -out:$@ -target:library
+
+$(DATA_FILE_BUILD): $(srcdir)$(subst $(ADDIN_BUILD),, $@)
+	mkdir -p $(dir $@)
+	cp $(srcdir)/$(subst $(ADDIN_BUILD),,$@) $@
 # Tell versions [3.59,3.63) of GNU make to not export all variables.
 # Otherwise a system limit (for SysV at least) may be exceeded.
 .NOEXPORT:
