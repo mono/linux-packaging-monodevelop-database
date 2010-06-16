@@ -26,8 +26,8 @@ Replaces: monodevelop (<< 0.10)
 Conflicts: monodevelop-query
 Provides: monodevelop-query
 Depends: ${shlibs:Depends}, ${misc:Depends}, ${cli:Depends},
- monodevelop (>= ${misc:Version}.2),
- monodevelop (<< ${misc:Version}.2.)
+ monodevelop (>= ${misc:Version}),
+ monodevelop (<< ${misc:Version}.)
 Description: Database plugin for MonoDevelop
  MonoDevelop is a GNOME IDE primarily designed for C# and other .NET
  languages.

@@ -5,6 +5,8 @@ monodevelop-database (2.4+dfsg-1) UNRELEASED; urgency=low
     + Stop using ../tarballs in get-orig-source rule
   * debian/control:
     + Increase build-deps to MonoDevelop 2.4
+    + Stop messing with binary MonoDevelop dependency, as everything has
+      a version number of 2.4
 
  -- Jo Shields <directhex@apebox.org>  Wed, 16 Jun 2010 23:07:37 +0100
 
