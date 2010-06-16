@@ -43,6 +43,25 @@
     <itemgroups />
     <signals />
   </object>
+  <object type="MonoDevelop.Database.Components.DataGrid" palette-category="MonoDevelop.Database.Components" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups>
+      <itemgroup label="DataGrid Properties">
+        <property name="ShowNavigator" />
+        <property name="EnableNavigator" />
+        <property name="PageSize" />
+        <property name="LimitPageSize" />
+      </itemgroup>
+    </itemgroups>
+    <signals />
+  </object>
+  <object type="MonoDevelop.Database.Components.DatabaseConnectionEditorWidget" palette-category="General" allow-children="false" base-type="Gtk.Bin">
+    <itemgroups />
+    <signals>
+      <itemgroup label="DatabaseConnectionEditorWidget Signals">
+        <signal name="SelectedDatabaseChanged" />
+      </itemgroup>
+    </signals>
+  </object>
   <object type="MonoDevelop.Database.Components.SqlEditorWidget" palette-category="widget" allow-children="false" base-type="Gtk.Bin">
     <itemgroups>
       <itemgroup label="SqlEditorWidget Properties">
@@ -55,17 +74,6 @@
         <signal name="TextChanged" />
       </itemgroup>
     </signals>
-  </object>
-  <object type="MonoDevelop.Database.Components.DataGrid" palette-category="MonoDevelop.Database.Components" allow-children="false" base-type="Gtk.Bin">
-    <itemgroups>
-      <itemgroup label="DataGrid Properties">
-        <property name="ShowNavigator" />
-        <property name="EnableNavigator" />
-        <property name="PageSize" />
-        <property name="LimitPageSize" />
-      </itemgroup>
-    </itemgroups>
-    <signals />
   </object>
   <object type="MonoDevelop.Database.Components.ConnectionSettingsWidget" palette-category="MonoDevelop.Database.Components" allow-children="false" base-type="Gtk.Bin">
     <itemgroups>

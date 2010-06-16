@@ -1,3 +1,73 @@
+2010-03-22  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* AssemblyInfo.cs:
+	* MonoDevelop.Database.Designer.addin.xml: Bumped MD version.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.Designer.csproj: Flush.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.Designer.csproj: Remove
+	  mono.addins.targets import.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* gtk-gui/gui.stetic:
+	* Dialogs/PreviewDialog.cs:
+	* Dialogs/UserEditorDialog.cs:
+	* Dialogs/ViewEditorDialog.cs:
+	* Dialogs/TableEditorDialog.cs:
+	* Widgets/CommentEditorWidget.cs:
+	* Widgets/IndicesEditorWidget.cs:
+	* Widgets/ColumnsEditorWidget.cs:
+	* Dialogs/CreateDatabaseDialog.cs:
+	* Widgets/TriggersEditorWidget.cs:
+	* Widgets/CreateDatabaseWidget.cs:
+	* Dialogs/ProcedureEditorDialog.cs:
+	* Widgets/ConstraintsEditorWidget.cs:
+	* MonoDevelop.Database.Designer.csproj:
+	* Widgets/CheckConstraintEditorWidget.cs:
+	* MonoDevelop.Database.Designer.addin.xml:
+	* Widgets/UniqueConstraintEditorWidget.cs:
+	* Widgets/PrimaryKeyConstraintEditorWidget.cs:
+	* Widgets/ForeignKeyConstraintEditorWidget.cs: Merged
+	  MD.Projects into MD.Core, and MD.Projects.Gui, MD.Core.Gui
+	  and MD.Components into MD.Ide.
+
+2010-02-12  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* gtk-gui/gui.stetic:
+	* gtk-gui/generated.cs:
+	* gtk-gui/MonoDevelop.Database.Designer.PreviewDialog.cs:
+	* gtk-gui/MonoDevelop.Database.Designer.UserEditorDialog.cs:
+	* gtk-gui/MonoDevelop.Database.Designer.ViewEditorDialog.cs:
+	* gtk-gui/MonoDevelop.Database.Designer.TableEditorDialog.cs:
+	* gtk-gui/MonoDevelop.Database.Designer.IndicesEditorWidget.cs:
+	* gtk-gui/MonoDevelop.Database.Designer.ColumnsEditorWidget.cs:
+	* gtk-gui/MonoDevelop.Database.Designer.CommentEditorWidget.cs:
+	* gtk-gui/MonoDevelop.Database.Designer.CreateDatabaseDialog.cs:
+	* gtk-gui/MonoDevelop.Database.Designer.TriggersEditorWidget.cs:
+	* gtk-gui/MonoDevelop.Database.Designer.ProcedureEditorDialog.cs:
+	* gtk-gui/MonoDevelop.Database.Designer.ConstraintsEditorWidget.cs:
+	* gtk-gui/MonoDevelop.Database.Designer.CheckConstraintEditorWidget.cs:
+	* gtk-gui/MonoDevelop.Database.Designer.UniqueConstraintEditorWidget.cs:
+	* gtk-gui/MonoDevelop.Database.Designer.PrimaryKeyConstraintEditorWidget.cs:
+	* gtk-gui/MonoDevelop.Database.Designer.ForeignKeyConstraintEditorWidget.cs:
+	  Flush.
+
+	* MonoDevelop.Database.Designer.csproj: Fix gettext class.
+
+2010-02-03  Luciano N. Callero  <lnc19@hotmail.com>
+
+	* MonoDevelop.Database.Designer.csproj: - Flush changes.
+
+2009-11-11  Luciano N. Callero  <lnc19@hotmail.com>
+
+	* MonoDevelop.Database.Designer.csproj: Target runtime from
+	  2.0 to 3.5.
+
 2009-11-03  Luciano N. Callero  <lnc19@hotmail.com>
 
 	* Dialogs/TableEditorDialog.cs: Implement save preview as

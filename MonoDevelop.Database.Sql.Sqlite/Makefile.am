@@ -2,13 +2,12 @@ ADDIN_BUILD = $(top_builddir)/build
 ASSEMBLY = $(ADDIN_BUILD)/MonoDevelop.Database.Sql.Sqlite.dll
 REFS =  \
 	$(GTK_SHARP_LIBS) \
+	$(MONODEVELOP_CORE_ADDINS_LIBS) \
 	$(MONODEVELOP_LIBS) \
 	-r:$(top_builddir)/build/MonoDevelop.Database.Components.dll \
 	-r:$(top_builddir)/build/MonoDevelop.Database.Designer.dll \
 	-r:$(top_builddir)/build/MonoDevelop.Database.Sql.dll \
-	-r:Mono.Data \
 	-r:Mono.Data.Sqlite \
-	-r:Mono.Posix \
 	-r:System \
 	-r:System.Data
 
@@ -30,7 +29,8 @@ FILES =  \
 
 RES =  \
 	gtk-gui/gui.stetic \
-	MonoDevelop.Database.Sql.Sqlite.addin.xml
+	MonoDevelop.Database.Sql.Sqlite.addin.xml \
+	SqliteSyntaxMode.xml
 
 if ENABLE_SQLITE
 all: $(ASSEMBLY)

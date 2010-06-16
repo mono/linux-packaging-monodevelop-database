@@ -1,4 +1,4 @@
-﻿//
+//
 // Authors:
 //   Ben Motmans  <ben.motmans@gmail.com>
 //
@@ -27,7 +27,7 @@ using Gtk;
 using System;
 using System.Collections.Generic;
 using MonoDevelop.Database.Sql;
-using MonoDevelop.Core.Gui;
+using MonoDevelop.Ide;
 
 namespace MonoDevelop.Database.Components
 {
@@ -53,7 +53,7 @@ namespace MonoDevelop.Database.Components
 			toggleRenderer.Toggled += new ToggledHandler (ItemToggled);
 			col.PackStart (toggleRenderer, false);
 			
-			CellRendererPixbuf pixbufRenderer = new CellRendererPixbuf ();
+			var pixbufRenderer = new CellRendererPixbuf ();
 			col.PackStart (pixbufRenderer, false);
 
 			CellRendererText textRenderer = new CellRendererText ();
@@ -149,8 +149,8 @@ namespace MonoDevelop.Database.Components
 		
 		private void PixbufDataFunc (CellLayout layout, CellRenderer cell, TreeModel model, TreeIter iter)
 		{
-			CellRendererPixbuf pixbufRenderer = cell as CellRendererPixbuf;
-			ISchemaContainer schema = model.GetValue (iter, columnObj) as ISchemaContainer;
+			var pixbufRenderer = (CellRendererPixbuf) cell;
+			var schema = (ISchemaContainer) model.GetValue (iter, columnObj);
 			
 			string iconString = null;
 			switch (schema.SchemaContainerType) {
@@ -169,7 +169,7 @@ namespace MonoDevelop.Database.Components
 			}
 
 			if (iconString != null)
-				pixbufRenderer.Pixbuf = MonoDevelop.Core.Gui.ImageService.GetPixbuf (iconString);
+				pixbufRenderer.Pixbuf = ImageService.GetPixbuf (iconString);
 		}
 		
 		private void ItemToggled (object sender, ToggledArgs args)

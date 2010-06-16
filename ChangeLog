@@ -1,10 +1,29 @@
-2009-12-11  Lluis Sanchez Gual  <lluis@novell.com>
+2010-06-14  Lluis Sanchez Gual  <lluis@novell.com>
 
 	* configure.in: Bump MD version.
 
-2009-12-10  Lluis Sanchez Gual  <lluis@novell.com>
+2010-05-20  Lluis Sanchez Gual  <lluis@novell.com>
 
 	* configure.in: Bump MD version.
+
+2010-03-22  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* configure.in: Bumped MD version.
+
+2010-03-17  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.sln: Merged MD.Projects into MD.Core,
+	  and MD.Projects.Gui, MD.Core.Gui and MD.Components into
+	  MD.Ide.
+
+2010-03-01  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.sln: The invariant policy can't be used
+	  anymore as base policy set.
+
+2010-02-12  Lluis Sanchez Gual  <lluis@novell.com>
+
+	* MonoDevelop.Database.sln: Flush.
 
 2009-10-30  Lluis Sanchez Gual  <lluis@novell.com>
 
