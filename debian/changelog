@@ -1,3 +1,10 @@
+monodevelop-database (2.4+dfsg-2) unstable; urgency=low
+
+  * [1434537] Add an Uploaders field with me in it, and set the package
+    to team-maintained.
+
+ -- Jo Shields <directhex@apebox.org>  Mon, 13 Sep 2010 15:58:28 +0100
+
 monodevelop-database (2.4+dfsg-1) experimental; urgency=low
 
   * New upstream release
