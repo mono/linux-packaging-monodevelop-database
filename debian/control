@@ -1,7 +1,8 @@
 Source: monodevelop-database
 Section: cli-mono
 Priority: optional
-Maintainer: Mirco Bauer <meebey@debian.org>
+Maintainer: Debian CLI Applications Team <pkg-cli-apps-team@lists.alioth.debian.org>
+Uploaders: Mirco Bauer <meebey@debian.org>, Jo Shields <directhex@apebox.org>
 Build-Depends: debhelper (>= 5), dpatch
 Build-Depends-Indep: cli-common-dev (>= 0.5.4),
  monodevelop (>= 2.4),
