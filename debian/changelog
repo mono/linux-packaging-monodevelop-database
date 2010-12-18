@@ -1,3 +1,13 @@
+monodevelop-database (2.4+dfsg-3) experimental; urgency=low
+
+  * [da639c4] Add a gbp.conf since we're building on a non-default
+    branch
+  * [b3d2c52] Convert from DH5 with dpatch to DH7 with Quilt. It makes
+    life much easier if we unify all the MonoDevelop addins on the same
+    packaging.
+
+ -- Jo Shields <directhex@apebox.org>  Sat, 18 Dec 2010 14:13:49 +0000
+
 monodevelop-database (2.4+dfsg-2) unstable; urgency=low
 
   * [1434537] Add an Uploaders field with me in it, and set the package
