@@ -11,72 +11,24 @@ DEB_VERSION = $(shell dpkg-parsechangelog -l$(DEBIAN_DIR)/changelog | grep ^Vers
 DEB_SOURCE_NAME = $(shell dpkg-parsechangelog -l$(DEBIAN_DIR)/changelog | grep ^Source | cut -d" " -f2)
 VERSION = $(shell echo $(DEB_VERSION) | cut -d"-" -f1 | sed 's/+dfsg.*//')
 
-include /usr/share/dpatch/dpatch.make
+MDVERSION = 2.4.1
 
-configure: configure-stamp
-configure-stamp: patch-stamp
-	dh_testdir
+include /usr/share/cli-common/cli.make
+include /usr/share/quilt/quilt.make
+
+override_dh_gencontrol:
+	dh_gencontrol -i -- -Vmisc:Version=$(MDVERSION)
+
+override_dh_auto_configure:
 	aclocal -I.
 	autoconf
 	automake --add-missing --copy
-	./configure --prefix=/usr \
-	  --mandir=\$${prefix}/share/man \
-	  --infodir=\$${prefix}/share/info \
-	  MCS=/usr/bin/mono-csc \
-	  CSC=/usr/bin/mono-csc
-	touch configure-stamp
+	dh_auto_configure -- MCS=/usr/bin/mono-csc CSC=/usr/bin/mono-csc
 
-build: build-stamp
-build-stamp: configure-stamp
-	dh_testdir
-	$(MAKE) RUNTIME=/usr/bin/cli
-	touch build-stamp
-
-clean: clean-patched unpatch
-clean-patched:
-	dh_testdir
-	dh_testroot
-	[ ! -f Makefile ] || $(MAKE) distclean
-	rm -rf $(CURDIR)/.wapi
-	rm -f configure-stamp
-	rm -f build-stamp
-	dh_clean 
-
-install: build
-	dh_testdir
-	dh_testroot
-	dh_clean -k 
-	dh_installdirs
-	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp
-	find $(CURDIR)/debian/tmp -name "*.mo" -print0 | xargs -0 chmod -x
-
-binary-indep: build install
-	dh_testdir
-	dh_testroot
-	dh_link -i
-	dh_install -i
-	dh_installchangelogs -i
-	dh_installdocs -i
-	dh_installexamples -i
-	dh_installmenu -i
-	dh_installman -i
-	dh_installmime -i
-	dh_desktop -i
-	dh_strip -i
-	dh_clistrip -i
-	dh_compress -i
-	dh_fixperms -i
-	dh_clifixperms -i
-	dh_installdeb -i
-	dh_shlibdeps -i
-	dh_clideps -i -d
-	dh_gencontrol -i -- -Vmisc:Version=$(VERSION)
-	dh_md5sums -i
-	dh_builddeb -i
-
-binary-arch:
-
-binary: binary-arch binary-indep
+override_dh_clean:
+	dh_clean
+	rm -f config.make config.log
+	find . -name "Makefile.in" -delete
 
 get-orig-source:
 	uscan \
@@ -102,4 +54,7 @@ get-orig-source:
 	gzip -9fn ./$(DEB_SOURCE_NAME)_$(VERSION)+dfsg.orig.tar
 	rm -r $(DEB_SOURCE_NAME)-$(VERSION)
 
-.PHONY: build clean binary-indep binary-arch binary install configure patch unpatch
+%:
+	dh --with quilt $@
+
+.PHONY: get-orig-source
