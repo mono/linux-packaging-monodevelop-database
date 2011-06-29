@@ -16,7 +16,7 @@ Build-Depends-Indep: cli-common-dev (>= 0.5.4),
  libmysql-cil-dev,
  libmono-addins-cil-dev,
  libmono-addins-gui-cil-dev
-Standards-Version: 3.8.4
+Standards-Version: 3.9.2
 Homepage: http://www.monodevelop.com/
 Vcs-Browser: http://svn.debian.org/wsvn/pkg-cli-apps/packages/monodevelop-database/trunk/
 Vcs-Svn: svn://svn.debian.org/svn/pkg-cli-apps/packages/monodevelop-database/trunk/
