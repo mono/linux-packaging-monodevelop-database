@@ -5,9 +5,9 @@ Maintainer: Debian CLI Applications Team <pkg-cli-apps-team@lists.alioth.debian.
 Uploaders: Mirco Bauer <meebey@debian.org>, Jo Shields <directhex@apebox.org>
 Build-Depends: debhelper (>= 7.0.50), quilt (>= 0.46-7~)
 Build-Depends-Indep: cli-common-dev (>= 0.5.4),
- monodevelop (>= 2.4),
- monodevelop-versioncontrol (>= 2.4),
- monodevelop-nunit (>= 2.4),
+ monodevelop (>= 2.5.92),
+ monodevelop-versioncontrol (>= 2.5.92),
+ monodevelop-nunit (>= 2.5.92),
  mono-devel (>= 2.4.3),
  autoconf,
  automake,
