@@ -1,3 +1,16 @@
+monodevelop-database (2.5.92+dfsg-1) experimental; urgency=low
+
+  * [3a259b2] Update branch name in debian/gbp.conf.
+  * [fd6d7cd] Imported Upstream version 2.5.92+dfsg
+  * [225d1b2] Bump expected MonoDevelop version.
+  * [c1d6650] Replace standalone quilt with DebSrc 3.0 (quilt).
+  * [4086600] Use dh-autoreconf.
+  * [ae33dea] Bump Debian Standards Version to 3.9.2.
+  * [a5a7a2c] Refresh Vcs-* fields in debian/control.
+  * [e71ee43] Refresh build dependencies.
+
+ -- Jo Shields <directhex@apebox.org>  Wed, 29 Jun 2011 22:46:23 +0100
+
 monodevelop-database (2.4+dfsg-3) experimental; urgency=low
 
   * [da639c4] Add a gbp.conf since we're building on a non-default
