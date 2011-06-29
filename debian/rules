@@ -19,9 +19,6 @@ override_dh_gencontrol:
 	dh_gencontrol -i -- -Vmisc:Version=$(MDVERSION)
 
 override_dh_auto_configure:
-	aclocal -I.
-	autoconf
-	automake --add-missing --copy
 	dh_auto_configure -- MCS=/usr/bin/mono-csc CSC=/usr/bin/mono-csc
 
 override_dh_clean:
@@ -54,6 +51,6 @@ get-orig-source:
 	rm -r $(DEB_SOURCE_NAME)-$(VERSION)
 
 %:
-	dh $@
+	dh --with autoreconf $@
 
 .PHONY: get-orig-source
