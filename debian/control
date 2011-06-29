@@ -18,8 +18,8 @@ Build-Depends-Indep: cli-common-dev (>= 0.5.4),
  libmono-addins-gui-cil-dev
 Standards-Version: 3.9.2
 Homepage: http://www.monodevelop.com/
-Vcs-Browser: http://svn.debian.org/wsvn/pkg-cli-apps/packages/monodevelop-database/trunk/
-Vcs-Svn: svn://svn.debian.org/svn/pkg-cli-apps/packages/monodevelop-database/trunk/
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-cli-apps/packages/monodevelop-database.git;a=summary
+Vcs-Git: git://anonscm.debian.org/pkg-cli-apps/packages/monodevelop-database.git
 
 Package: monodevelop-database
 Architecture: all
