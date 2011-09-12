@@ -1,3 +1,11 @@
+monodevelop-database (2.6+dfsg-1) experimental; urgency=low
+
+  * [1fc58d6] Update debian/watch to Xamarin-hosted source
+  * [f241f51] Imported Upstream version 2.6+dfsg
+  * [58a9d8f] Bump build dependencies
+
+ -- Jo Shields <directhex@apebox.org>  Mon, 12 Sep 2011 17:29:22 +0100
+
 monodevelop-database (2.5.92+dfsg-1) experimental; urgency=low
 
   * [3a259b2] Update branch name in debian/gbp.conf.
