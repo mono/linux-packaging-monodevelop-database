@@ -1,3 +1,11 @@
+monodevelop-database (2.8.2+dfsg-1) experimental; urgency=low
+
+  * [c7a8e9e] Imported Upstream version 2.8.2+dfsg
+  * [1446a0a] Bump build-deps to MonoDevelop 2.8.2
+  * [5cb8170] Bump binary dependencies to MonoDevelop 2.8.2
+
+ -- Jo Shields <directhex@apebox.org>  Thu, 10 Nov 2011 17:28:20 +0000
+
 monodevelop-database (2.6+dfsg-1) experimental; urgency=low
 
   * [1fc58d6] Update debian/watch to Xamarin-hosted source
