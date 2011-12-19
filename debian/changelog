@@ -1,3 +1,11 @@
+monodevelop-database (2.8.5+dfsg-1) experimental; urgency=low
+
+  * [ff25795] Imported Upstream version 2.8.5+dfsg
+  * [e3471cd] Bump build dependencies to MonoDevelop 2.8.5.
+  * [bac0476] Bump binary dependencies to MonoDevelop 2.8.5.
+
+ -- Jo Shields <directhex@apebox.org>  Mon, 19 Dec 2011 14:58:18 +0000
+
 monodevelop-database (2.8.2+dfsg-1) experimental; urgency=low
 
   * [c7a8e9e] Imported Upstream version 2.8.2+dfsg
