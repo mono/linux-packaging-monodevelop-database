@@ -13,8 +13,6 @@ VERSION = $(shell echo $(DEB_VERSION) | cut -d"-" -f1 | sed 's/+dfsg.*//')
 
 MDVERSION = 2.8.5
 
-include /usr/share/cli-common/cli.make
-
 override_dh_gencontrol:
 	dh_gencontrol -i -- -Vmisc:Version=$(MDVERSION)
 
@@ -51,6 +49,6 @@ get-orig-source:
 	rm -r $(DEB_SOURCE_NAME)-$(VERSION)
 
 %:
-	dh $@ --with autoreconf
+	dh $@ --with autoreconf,cli
 
 .PHONY: get-orig-source
