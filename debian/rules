@@ -51,6 +51,6 @@ get-orig-source:
 	rm -r $(DEB_SOURCE_NAME)-$(VERSION)
 
 %:
-	dh --with autoreconf $@
+	dh $@ --with autoreconf
 
 .PHONY: get-orig-source
