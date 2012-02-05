@@ -1,3 +1,10 @@
+monodevelop-database (2.8.6.3+dfsg-1) unstable; urgency=low
+
+  * [f026317] Imported Upstream version 2.8.6.3+dfsg
+  * [eb892a8] Bump Monodevelop version requirements to 2.8.6.3
+
+ -- Jo Shields <directhex@apebox.org>  Sun, 05 Feb 2012 11:09:40 +0100
+
 monodevelop-database (2.8.5+dfsg-2) unstable; urgency=low
 
   * [ad926f6] Remove gbp.conf since we're using master branch now
