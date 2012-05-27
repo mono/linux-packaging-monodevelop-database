@@ -5,9 +5,9 @@ Maintainer: Debian CLI Applications Team <pkg-cli-apps-team@lists.alioth.debian.
 Uploaders: Mirco Bauer <meebey@debian.org>, Jo Shields <directhex@apebox.org>
 Build-Depends: debhelper (>= 7.0.50), dh-autoreconf
 Build-Depends-Indep: cli-common-dev (>= 0.8~),
- monodevelop (>= 2.8.6.3),
- monodevelop-versioncontrol (>= 2.8.6.3),
- monodevelop-nunit (>= 2.8.6.3),
+ monodevelop (>= 3.0.2),
+ monodevelop-versioncontrol (>= 3.0.2),
+ monodevelop-nunit (>= 3.0.2),
  mono-devel (>= 2.10),
  libgtk2.0-cil-dev,
  libmysql-cil-dev,
