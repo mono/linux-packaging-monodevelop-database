@@ -1,3 +1,10 @@
+monodevelop-database (3.0.2+dfsg-1) unstable; urgency=low
+
+  * [11a1c17] Imported Upstream version 3.0.2+dfsg
+  * [21e91f2] Bump MonoDevelop requirement to 3.0.2
+
+ -- Jo Shields <directhex@apebox.org>  Sun, 27 May 2012 17:21:47 +0100
+
 monodevelop-database (2.8.6.3+dfsg-1) unstable; urgency=low
 
   * [f026317] Imported Upstream version 2.8.6.3+dfsg
