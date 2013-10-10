@@ -1,3 +1,13 @@
+monodevelop-database (4.0.12+dfsg-1) unstable; urgency=low
+
+  * [317ebdd] Refresh debian/watch for new upstream tarball naming scheme
+  * [f5f755a] Imported Upstream version 4.0.12+dfsg (Closes: #713084)
+  * [ea619ad] Refresh package dependencies and build dependencies for 
+    the corresponding version of MonoDevelop (Closes: #710763)
+  * [d701442] Require mono-addins 1.0+
+
+ -- Jo Shields <directhex@apebox.org>  Thu, 10 Oct 2013 17:41:50 +0200
+
 monodevelop-database (3.0.3.2+dfsg-1) unstable; urgency=low
 
   * [0fda250] Imported Upstream version 3.0.3.2+dfsg
