@@ -1,0 +1,306 @@
+Index: xamarin-pkg-monodevelop-database/configure.in
+===================================================================
+--- xamarin-pkg-monodevelop-database.orig/configure.in	2014-10-06 13:33:05.237624879 +0100
++++ xamarin-pkg-monodevelop-database/configure.in	2014-10-06 13:33:05.233624879 +0100
+@@ -52,7 +52,7 @@
+ 
+ dnl hard dependencies
+ MONOADDINS_REQUIRED_VERSION=0.4
+-MONODEVELOP_REQUIRED_VERSION=4.2.3
++MONODEVELOP_REQUIRED_VERSION=5.5
+ GTKSHARP_REQUIRED_VERSION=2.12.8
+ 
+ PKG_CHECK_MODULES(MONO_ADDINS, mono-addins >= $MONOADDINS_REQUIRED_VERSION)
+Index: xamarin-pkg-monodevelop-database/MonoDevelop.Database.CodeGenerator/MonoDevelop.Database.CodeGenerator.addin.xml
+===================================================================
+--- xamarin-pkg-monodevelop-database.orig/MonoDevelop.Database.CodeGenerator/MonoDevelop.Database.CodeGenerator.addin.xml	2014-09-22 14:28:49.000000000 +0100
++++ xamarin-pkg-monodevelop-database/MonoDevelop.Database.CodeGenerator/MonoDevelop.Database.CodeGenerator.addin.xml	2014-10-06 13:35:06.869622601 +0100
+@@ -6,7 +6,7 @@
+ 	url		= "http://www.monodevelop.com"
+ 	description	= "Database CodeGenerator Module"
+ 	category	= "Database"
+-	version		= "4.2.3">
++	version		= "5.5">
+     
+ 	<Runtime>
+ 		<Import assembly="MonoDevelop.Database.CodeGenerator.dll"/>
+@@ -15,11 +15,11 @@
+   	<Localizer type="Gettext" catalog="monodevelop-database"/>
+ 
+ 	<Dependencies>
+-		<Addin id="Core" version="4.2.3"/>
+-		<Addin id="Ide" version="4.2.3"/>
+-		<Addin id="Database.Sql" version="4.2.3"/>
+-		<Addin id="Database.Components" version="4.2.3"/>
+-		<Addin id="Database.Query" version="4.2.3"/>
++		<Addin id="Core" version="5.5"/>
++		<Addin id="Ide" version="5.5"/>
++		<Addin id="Database.Sql" version="5.5"/>
++		<Addin id="Database.Components" version="5.5"/>
++		<Addin id="Database.Query" version="5.5"/>
+ 	</Dependencies>
+ 
+ 	<Extension path = "/MonoDevelop/Ide/Commands">
+Index: xamarin-pkg-monodevelop-database/MonoDevelop.Database.Components/MonoDevelop.Database.Components.addin.xml
+===================================================================
+--- xamarin-pkg-monodevelop-database.orig/MonoDevelop.Database.Components/MonoDevelop.Database.Components.addin.xml	2014-09-22 14:28:49.000000000 +0100
++++ xamarin-pkg-monodevelop-database/MonoDevelop.Database.Components/MonoDevelop.Database.Components.addin.xml	2014-10-06 13:35:02.889622675 +0100
+@@ -6,7 +6,7 @@
+ 	url		= "http://www.monodevelop.com"
+ 	description	= "Database Components Module"
+ 	category	= "Database"
+-	version		= "4.2.3">
++	version		= "5.5">
+     
+ 	<Runtime>
+ 		<Import assembly="MonoDevelop.Database.Components.dll"/>
+@@ -15,10 +15,10 @@
+   	<Localizer type="Gettext" catalog="monodevelop-database"/>
+ 
+ 	<Dependencies>
+-		<Addin id="Core" version="4.2.3"/>
+-		<Addin id="Ide" version="4.2.3"/>
+-		<Addin id="Database.Sql" version="4.2.3"/>
+-		<Addin id="SourceEditor2" version="4.2.3"/>
++		<Addin id="Core" version="5.5"/>
++		<Addin id="Ide" version="5.5"/>
++		<Addin id="Database.Sql" version="5.5"/>
++		<Addin id="SourceEditor2" version="5.5"/>
+ 	</Dependencies>
+ 
+ 	<ExtensionPoint path = "/MonoDevelop/Database/DataGrid/Renderers" name = "DataGrid renderers">
+Index: xamarin-pkg-monodevelop-database/MonoDevelop.Database.ConnectionManager/MonoDevelop.Database.ConnectionManager.addin.xml
+===================================================================
+--- xamarin-pkg-monodevelop-database.orig/MonoDevelop.Database.ConnectionManager/MonoDevelop.Database.ConnectionManager.addin.xml	2014-09-22 14:28:49.000000000 +0100
++++ xamarin-pkg-monodevelop-database/MonoDevelop.Database.ConnectionManager/MonoDevelop.Database.ConnectionManager.addin.xml	2014-10-06 13:34:57.985622767 +0100
+@@ -6,7 +6,7 @@
+ 	url		= "http://www.monodevelop.com"
+ 	description	= "Database ConnectionManager Module"
+ 	category    = "Database"
+-	version		= "4.2.3">
++	version		= "5.5">
+     
+ 	<Runtime>
+ 		<Import assembly="MonoDevelop.Database.ConnectionManager.dll"/>
+@@ -15,12 +15,12 @@
+   	<Localizer type="Gettext" catalog="monodevelop-database"/>
+ 
+ 	<Dependencies>
+-		<Addin id="Core" version="4.2.3"/>
+-		<Addin id="Ide" version="4.2.3"/>
+-		<Addin id="Database.Sql" version="4.2.3"/>
+-		<Addin id="Database.Components" version="4.2.3"/>
+-		<Addin id="Database.Query" version="4.2.3"/>
+-		<Addin id="Database.Designer" version="4.2.3"/>
++		<Addin id="Core" version="5.5"/>
++		<Addin id="Ide" version="5.5"/>
++		<Addin id="Database.Sql" version="5.5"/>
++		<Addin id="Database.Components" version="5.5"/>
++		<Addin id="Database.Query" version="5.5"/>
++		<Addin id="Database.Designer" version="5.5"/>
+ 	</Dependencies>
+ 
+ 	<Extension path = "/MonoDevelop/Ide/Pads">
+Index: xamarin-pkg-monodevelop-database/MonoDevelop.Database.Designer/MonoDevelop.Database.Designer.addin.xml
+===================================================================
+--- xamarin-pkg-monodevelop-database.orig/MonoDevelop.Database.Designer/MonoDevelop.Database.Designer.addin.xml	2014-09-22 14:28:49.000000000 +0100
++++ xamarin-pkg-monodevelop-database/MonoDevelop.Database.Designer/MonoDevelop.Database.Designer.addin.xml	2014-10-06 13:34:53.573622850 +0100
+@@ -6,7 +6,7 @@
+ 	url		= "http://www.monodevelop.com"
+ 	description	= "Database Designer Module"
+ 	category    = "Database"
+-	version		= "4.2.3">
++	version		= "5.5">
+     
+ 	<Runtime>
+ 		<Import assembly="MonoDevelop.Database.Designer.dll"/>
+@@ -15,9 +15,9 @@
+   	<Localizer type="Gettext" catalog="monodevelop-database"/>
+ 
+ 	<Dependencies>
+-		<Addin id="Core" version="4.2.3"/>
+-		<Addin id="Ide" version="4.2.3"/>
+-		<Addin id="Database.Sql" version="4.2.3"/>
++		<Addin id="Core" version="5.5"/>
++		<Addin id="Ide" version="5.5"/>
++		<Addin id="Database.Sql" version="5.5"/>
+ 	</Dependencies>
+ 
+ </Addin>
+Index: xamarin-pkg-monodevelop-database/MonoDevelop.Database.Query/MonoDevelop.Database.Query.addin.xml
+===================================================================
+--- xamarin-pkg-monodevelop-database.orig/MonoDevelop.Database.Query/MonoDevelop.Database.Query.addin.xml	2014-09-22 14:28:49.000000000 +0100
++++ xamarin-pkg-monodevelop-database/MonoDevelop.Database.Query/MonoDevelop.Database.Query.addin.xml	2014-10-06 13:34:47.765622959 +0100
+@@ -6,7 +6,7 @@
+ 	url		= "http://www.monodevelop.com"
+ 	description	= "Database Query Module"
+ 	category    = "Database"
+-	version		= "4.2.3">
++	version		= "5.5">
+     
+ 	<Runtime>
+ 		<Import assembly="MonoDevelop.Database.Query.dll"/>
+@@ -15,10 +15,10 @@
+   	<Localizer type="Gettext" catalog="monodevelop-database"/>
+ 
+ 	<Dependencies>
+-		<Addin id="Core" version="4.2.3"/>
+-		<Addin id="Ide" version="4.2.3"/>
+-		<Addin id="Database.Sql" version="4.2.3"/>
+-		<Addin id="Database.Components" version="4.2.3"/>
++		<Addin id="Core" version="5.5"/>
++		<Addin id="Ide" version="5.5"/>
++		<Addin id="Database.Sql" version="5.5"/>
++		<Addin id="Database.Components" version="5.5"/>
+ 	</Dependencies>
+ 
+ 	<ExtensionPoint path = "/MonoDevelop/Database/ToolBar/SqlQueryView">
+Index: xamarin-pkg-monodevelop-database/MonoDevelop.Database.Sql.MySql/MonoDevelop.Database.Sql.MySql.addin.xml
+===================================================================
+--- xamarin-pkg-monodevelop-database.orig/MonoDevelop.Database.Sql.MySql/MonoDevelop.Database.Sql.MySql.addin.xml	2014-09-22 14:28:49.000000000 +0100
++++ xamarin-pkg-monodevelop-database/MonoDevelop.Database.Sql.MySql/MonoDevelop.Database.Sql.MySql.addin.xml	2014-10-06 13:34:36.313623173 +0100
+@@ -6,7 +6,7 @@
+ 	url		= "http://www.monodevelop.com"
+ 	description	= "Database Module"
+ 	category    = "Database"
+-	version		= "4.2.3">
++	version		= "5.5">
+     
+ 	<Runtime>
+ 		<Import assembly="MonoDevelop.Database.Sql.MySql.dll"/>
+@@ -15,12 +15,12 @@
+   	<Localizer type="Gettext" catalog="monodevelop-database"/>
+ 
+ 	<Dependencies>
+-		<Addin id="Core" version="4.2.3"/>
+-		<Addin id="Ide" version="4.2.3"/>
+-		<Addin id="Database.Sql" version="4.2.3"/>
+-		<Addin id="Database.Components" version="4.2.3"/>
+-		<Addin id="Database.Designer" version="4.2.3"/>
+-		<Addin id="SourceEditor2" version="4.2.3"/>
++		<Addin id="Core" version="5.5"/>
++		<Addin id="Ide" version="5.5"/>
++		<Addin id="Database.Sql" version="5.5"/>
++		<Addin id="Database.Components" version="5.5"/>
++		<Addin id="Database.Designer" version="5.5"/>
++		<Addin id="SourceEditor2" version="5.5"/>
+ 	</Dependencies>
+ 
+ 	<Extension path = "/MonoDevelop/Database/Sql">
+Index: xamarin-pkg-monodevelop-database/MonoDevelop.Database.Sql.Npgsql/MonoDevelop.Database.Sql.Npgsql.addin.xml
+===================================================================
+--- xamarin-pkg-monodevelop-database.orig/MonoDevelop.Database.Sql.Npgsql/MonoDevelop.Database.Sql.Npgsql.addin.xml	2014-09-22 14:28:49.000000000 +0100
++++ xamarin-pkg-monodevelop-database/MonoDevelop.Database.Sql.Npgsql/MonoDevelop.Database.Sql.Npgsql.addin.xml	2014-10-06 13:34:31.457623264 +0100
+@@ -6,7 +6,7 @@
+ 	url		= "http://www.monodevelop.com"
+ 	description	= "Database Module"
+ 	category    = "Database"
+-	version		= "4.2.3">
++	version		= "5.5">
+     
+ 	<Runtime>
+ 		<Import assembly="MonoDevelop.Database.Sql.Npgsql.dll"/>
+@@ -15,12 +15,12 @@
+   	<Localizer type="Gettext" catalog="monodevelop-database"/>
+ 
+ 	<Dependencies>
+-		<Addin id="Core" version="4.2.3"/>
+-		<Addin id="Ide" version="4.2.3"/>
+-		<Addin id="Database.Sql" version="4.2.3"/>
+-		<Addin id="Database.Components" version="4.2.3"/>
+-		<Addin id="Database.Designer" version="4.2.3"/>
+-		<Addin id="SourceEditor2" version="4.2.3"/>
++		<Addin id="Core" version="5.5"/>
++		<Addin id="Ide" version="5.5"/>
++		<Addin id="Database.Sql" version="5.5"/>
++		<Addin id="Database.Components" version="5.5"/>
++		<Addin id="Database.Designer" version="5.5"/>
++		<Addin id="SourceEditor2" version="5.5"/>
+ 	</Dependencies>
+ 
+ 	<Extension path = "/MonoDevelop/Database/Sql">
+Index: xamarin-pkg-monodevelop-database/MonoDevelop.Database.Sql.SqlServer/MonoDevelop.Database.Sql.SqlServer.addin.xml
+===================================================================
+--- xamarin-pkg-monodevelop-database.orig/MonoDevelop.Database.Sql.SqlServer/MonoDevelop.Database.Sql.SqlServer.addin.xml	2014-09-22 14:28:49.000000000 +0100
++++ xamarin-pkg-monodevelop-database/MonoDevelop.Database.Sql.SqlServer/MonoDevelop.Database.Sql.SqlServer.addin.xml	2014-10-06 13:33:59.681623859 +0100
+@@ -6,7 +6,7 @@
+ 	url		= "http://www.monodevelop.com"
+ 	description	= "Database Module"
+ 	category    = "Database"
+-	version		= "4.2.3">
++	version		= "5.5">
+     
+ 	<Runtime>
+ 		<Import assembly="MonoDevelop.Database.Sql.SqlServer.dll"/>
+@@ -15,12 +15,12 @@
+   	<Localizer type="Gettext" catalog="monodevelop-database"/>
+ 
+ 	<Dependencies>
+-		<Addin id="Core" version="4.2.3"/>
+-		<Addin id="Ide" version="4.2.3"/>
+-		<Addin id="Database.Sql" version="4.2.3"/>
+-		<Addin id="Database.Components" version="4.2.3"/>
+-		<Addin id="Database.Designer" version="4.2.3"/>
+-		<Addin id="SourceEditor2" version="4.2.3"/>
++		<Addin id="Core" version="5.5"/>
++		<Addin id="Ide" version="5.5"/>
++		<Addin id="Database.Sql" version="5.5"/>
++		<Addin id="Database.Components" version="5.5"/>
++		<Addin id="Database.Designer" version="5.5"/>
++		<Addin id="SourceEditor2" version="5.5"/>
+ 	</Dependencies>
+ 
+ 	<Extension path = "/MonoDevelop/Database/Sql">
+Index: xamarin-pkg-monodevelop-database/MonoDevelop.Database.Sql.Sqlite/MonoDevelop.Database.Sql.Sqlite.addin.xml
+===================================================================
+--- xamarin-pkg-monodevelop-database.orig/MonoDevelop.Database.Sql.Sqlite/MonoDevelop.Database.Sql.Sqlite.addin.xml	2014-09-22 14:28:49.000000000 +0100
++++ xamarin-pkg-monodevelop-database/MonoDevelop.Database.Sql.Sqlite/MonoDevelop.Database.Sql.Sqlite.addin.xml	2014-10-06 13:34:04.325623772 +0100
+@@ -6,7 +6,7 @@
+ 	url		= "http://www.monodevelop.com"
+ 	description	= "Database Module"
+ 	category    = "Database"
+-	version		= "4.2.3">
++	version		= "5.5">
+     
+ 	<Runtime>
+ 		<Import assembly="MonoDevelop.Database.Sql.Sqlite.dll"/>
+@@ -15,12 +15,12 @@
+   	<Localizer type="Gettext" catalog="monodevelop-database"/>
+ 
+ 	<Dependencies>
+-		<Addin id="Core" version="4.2.3"/>
+-		<Addin id="Ide" version="4.2.3"/>
+-		<Addin id="Database.Sql" version="4.2.3"/>
+-		<Addin id="Database.Components" version="4.2.3"/>
+-		<Addin id="Database.Designer" version="4.2.3"/>
+-		<Addin id="SourceEditor2" version="4.2.3"/>
++		<Addin id="Core" version="5.5"/>
++		<Addin id="Ide" version="5.5"/>
++		<Addin id="Database.Sql" version="5.5"/>
++		<Addin id="Database.Components" version="5.5"/>
++		<Addin id="Database.Designer" version="5.5"/>
++		<Addin id="SourceEditor2" version="5.5"/>
+ 	</Dependencies>
+ 
+ 	<Extension path = "/MonoDevelop/Database/Sql">
+Index: xamarin-pkg-monodevelop-database/MonoDevelop.Database.Sql/MonoDevelop.Database.Sql.addin.xml
+===================================================================
+--- xamarin-pkg-monodevelop-database.orig/MonoDevelop.Database.Sql/MonoDevelop.Database.Sql.addin.xml	2014-09-22 14:28:49.000000000 +0100
++++ xamarin-pkg-monodevelop-database/MonoDevelop.Database.Sql/MonoDevelop.Database.Sql.addin.xml	2014-10-06 13:34:41.337623079 +0100
+@@ -6,14 +6,14 @@
+ 	url		= "http://www.monodevelop.com"
+ 	description	= "Database Module"
+ 	category	= "Database"
+-	version		= "4.2.3">
++	version		= "5.5">
+     
+ 	<Runtime>
+ 		<Import assembly="MonoDevelop.Database.Sql.dll"/>
+ 	</Runtime>
+ 
+ 	<Dependencies>
+-		<Addin id="Core" version="4.2.3"/>
++		<Addin id="Core" version="5.5"/>
+ 	</Dependencies>
+ 
+   	<Localizer type="Gettext" catalog="monodevelop-database"/>
