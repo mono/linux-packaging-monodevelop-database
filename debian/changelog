@@ -1,3 +1,17 @@
+monodevelop-database (5.5.0.227-0xamarin1) wheezy; urgency=medium
+
+  * [3980a9c] Imported Upstream version 5.5.0.227
+  * [72c4d7a] Disable link_system_libs.patch - we intentionally want to 
+    use bundled MySQL here, because it does a terrible job of ABI handling 
+    and we can't build against a distro MySQL lib in $old_distro which is 
+    also available in $new_distro
+  * [9ef61b2] Bump dependencies to 5.5.0.227
+  * [7c04b1f] Work around AC_INIT problem in autoreconf in tarball builds
+  * [f96d507] Exclude some platform-irrelevant modulerefs
+  * [0877c82] configure.in incorrectly says it needs MD 4.2.3 - bump this to 5.5
+
+ -- Jo Shields <directhex@apebox.org>  Mon, 06 Oct 2014 12:54:27 +0100
+
 monodevelop-database (4.0.12+dfsg-1) unstable; urgency=low
 
   * [317ebdd] Refresh debian/watch for new upstream tarball naming scheme
