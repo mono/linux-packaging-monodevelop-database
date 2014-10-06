@@ -11,7 +11,7 @@ DEB_VERSION = $(shell dpkg-parsechangelog -l$(DEBIAN_DIR)/changelog | grep ^Vers
 DEB_SOURCE_NAME = $(shell dpkg-parsechangelog -l$(DEBIAN_DIR)/changelog | grep ^Source | cut -d" " -f2)
 VERSION = $(shell echo $(DEB_VERSION) | cut -d"-" -f1 | sed 's/+dfsg.*//')
 
-MDVERSION = 4.0.12
+MDVERSION = 5.5.0.227
 
 override_dh_gencontrol:
 	dh_gencontrol -i -- -Vmisc:Version=$(MDVERSION)
