@@ -24,6 +24,11 @@ override_dh_clean:
 	rm -f config.make config.log
 	find . -name "Makefile.in" -delete
 
+override_dh_clideps:
+	dh_clideps --exclude-moduleref=secur32 \
+	           --exclude-moduleref=secur32.Dll \
+	           --exclude-moduleref=coredll
+
 get-orig-source:
 	uscan \
 		--package $(DEB_SOURCE_NAME) \
