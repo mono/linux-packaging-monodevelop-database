@@ -1,7 +1,18 @@
-Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/Makefile.in
-===================================================================
---- monodevelop-database-5.10.orig/MonoDevelop.Database.Sql.Npgsql/Makefile.in
-+++ monodevelop-database-5.10/MonoDevelop.Database.Sql.Npgsql/Makefile.in
+diff -urNad --binary monodevelop-database-5.10.orig/MonoDevelop.Database.Sql.Npgsql/Makefile.am monodevelop-database-5.10/MonoDevelop.Database.Sql.Npgsql/Makefile.am
+--- monodevelop-database-5.10.orig/MonoDevelop.Database.Sql.Npgsql/Makefile.am	2014-09-22 14:28:49.000000000 +0100
++++ monodevelop-database-5.10/MonoDevelop.Database.Sql.Npgsql/Makefile.am	2016-02-15 17:17:25.470438732 +0000
+@@ -8,7 +8,7 @@
+ 	-r:$(top_builddir)/build/MonoDevelop.Database.Designer.dll \
+ 	-r:$(top_builddir)/build/MonoDevelop.Database.Sql.dll \
+ 	-r:Mono.Posix \
+-	-r:Npgsql \
++	-pkg:npgsql \
+ 	-r:System \
+ 	-r:System.Core \
+ 	-r:System.Data \
+diff -urNad --binary monodevelop-database-5.10.orig/MonoDevelop.Database.Sql.Npgsql/Makefile.in monodevelop-database-5.10/MonoDevelop.Database.Sql.Npgsql/Makefile.in
+--- monodevelop-database-5.10.orig/MonoDevelop.Database.Sql.Npgsql/Makefile.in	2015-12-16 10:20:07.000000000 +0000
++++ monodevelop-database-5.10/MonoDevelop.Database.Sql.Npgsql/Makefile.in	2016-02-15 17:17:46.034354186 +0000
 @@ -266,7 +266,7 @@
  	-r:$(top_builddir)/build/MonoDevelop.Database.Designer.dll \
  	-r:$(top_builddir)/build/MonoDevelop.Database.Sql.dll \
@@ -11,10 +22,9 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/Makefile.in
  	-r:System \
  	-r:System.Core \
  	-r:System.Data \
-Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlPooledDbConnection.cs
-===================================================================
---- monodevelop-database.orig/MonoDevelop.Database.Sql.Npgsql/NpgsqlPooledDbConnection.cs
-+++ monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlPooledDbConnection.cs
+diff -urNad --binary monodevelop-database-5.10.orig/MonoDevelop.Database.Sql.Npgsql/NpgsqlPooledDbConnection.cs monodevelop-database-5.10/MonoDevelop.Database.Sql.Npgsql/NpgsqlPooledDbConnection.cs
+--- monodevelop-database-5.10.orig/MonoDevelop.Database.Sql.Npgsql/NpgsqlPooledDbConnection.cs	2014-09-22 14:28:49.000000000 +0100
++++ monodevelop-database-5.10/MonoDevelop.Database.Sql.Npgsql/NpgsqlPooledDbConnection.cs	2016-02-15 17:17:25.470438732 +0000
 @@ -25,65 +25,65 @@
  
  using System;
@@ -135,10 +145,9 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlPooledDbConnec
  		}
  	}
  }
-Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider.cs
-===================================================================
---- monodevelop-database.orig/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider.cs
-+++ monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider.cs
+diff -urNad --binary monodevelop-database-5.10.orig/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider.cs monodevelop-database-5.10/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider.cs
+--- monodevelop-database-5.10.orig/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider.cs	2014-09-22 14:28:49.000000000 +0100
++++ monodevelop-database-5.10/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider.cs	2016-02-15 17:17:25.474438716 +0000
 @@ -1,49 +1,50 @@
 -//
 -// Authors:
@@ -232,7 +241,7 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
  			AddSupportedSchemaActions (SchemaType.Database, SchemaActions.All);
  			AddSupportedSchemaActions (SchemaType.Table, SchemaActions.Create | SchemaActions.Drop | SchemaActions.Rename | SchemaActions.Schema);
  			AddSupportedSchemaActions (SchemaType.View, SchemaActions.All);
-@@ -56,1223 +57,1223 @@ using Npgsql;
+@@ -56,1223 +57,1223 @@
  			AddSupportedSchemaActions (SchemaType.CheckConstraint, SchemaActions.Create | SchemaActions.Drop | SchemaActions.Rename | SchemaActions.Schema);
  			AddSupportedSchemaActions (SchemaType.UniqueConstraint, SchemaActions.Create | SchemaActions.Drop | SchemaActions.Rename | SchemaActions.Schema);
  			AddSupportedSchemaActions (SchemaType.Constraint, SchemaActions.Create | SchemaActions.Drop | SchemaActions.Rename | SchemaActions.Schema);
@@ -286,16 +295,6 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
 -		public override ColumnSchemaCollection GetTableColumns (TableSchema table)
 -		{
 -			ColumnSchemaCollection columns = new ColumnSchemaCollection ();
--			
--			using (IPooledDbConnection conn = connectionPool.Request ()) {
--				using (IDbCommand command = conn.CreateCommand (string.Format(
--					@"SELECT 
--						a.attname, 
--						a.attnotnull, 
--						a.attlen,
--						t.typname, 
--						adef.adsrc 
--					FROM
 +			AddSupportedSchemaActions (SchemaType.User, SchemaActions.Schema);
 +			pool = connectionPool;
 +		}
@@ -346,7 +345,16 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
 +		public override ColumnSchemaCollection GetTableColumns (TableSchema table)
 +		{
 +			ColumnSchemaCollection columns = new ColumnSchemaCollection ();
-+			
+ 			
+-			using (IPooledDbConnection conn = connectionPool.Request ()) {
+-				using (IDbCommand command = conn.CreateCommand (string.Format(
+-					@"SELECT 
+-						a.attname, 
+-						a.attnotnull, 
+-						a.attlen,
+-						t.typname, 
+-						adef.adsrc 
+-					FROM
 +			using (IPooledDbConnection conn = connectionPool.Request ()) {
 +				using (IDbCommand command = conn.CreateCommand (string.Format(
 +					@"SELECT 
@@ -511,20 +519,6 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
 -						conn.Release ();
 -					}
 -				}
--			}
--			return views;
--		}
--
--		public override ColumnSchemaCollection GetViewColumns (ViewSchema view)
--		{
--			ColumnSchemaCollection columns = new ColumnSchemaCollection ();
--			
--			using (IPooledDbConnection conn = connectionPool.Request ()) {
--				using (IDbCommand command = conn.CreateCommand (string.Format (
--					@"SELECT 
--						attname, 
--						typname, 
--						attlen, 
 +									// TODO: fill column.Definition
 +									columns.Add (column);
 +								}
@@ -538,7 +532,13 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
 +						conn.Release ();
 +					}
 +				}
-+			}
+ 			}
+-			return views;
+-		}
+-
+-		public override ColumnSchemaCollection GetViewColumns (ViewSchema view)
+-		{
+-			ColumnSchemaCollection columns = new ColumnSchemaCollection ();
 +			return columns;
 +		}
 +
@@ -641,7 +641,13 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
 +		public override ColumnSchemaCollection GetViewColumns (ViewSchema view)
 +		{
 +			ColumnSchemaCollection columns = new ColumnSchemaCollection ();
-+			
+ 			
+-			using (IPooledDbConnection conn = connectionPool.Request ()) {
+-				using (IDbCommand command = conn.CreateCommand (string.Format (
+-					@"SELECT 
+-						attname, 
+-						typname, 
+-						attlen, 
 +			using (IPooledDbConnection conn = connectionPool.Request ()) {
 +				using (IDbCommand command = conn.CreateCommand (string.Format (
 +					@"SELECT 
@@ -685,14 +691,41 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
 -						conn.Release ();
 -					}				
 -				}
--			}
++					ORDER BY a.attnum;", view.Name))) {
++					try {
++						using (IDataReader r = command.ExecuteReader()) {
++							while (r.Read ()) {
++								ColumnSchema column = new ColumnSchema (this, view);
++								column.Name = r.GetString(0);
++								column.DataTypeName = r.GetString (1);
++								column.SchemaName = view.SchemaName;
++								column.IsNullable = r.GetBoolean (3);
++								column.DataType.LengthRange.Default = r.GetInt32 (2);
++								// TODO: Fill column.Definition
++								columns.Add (column);
++							}
++							r.Close ();
++						}
++					} catch (Exception e) {
++						QueryService.RaiseException (e);
++					} finally {
++						conn.Release ();
++					}				
++				}
+ 			}
 -			return columns;
 -		}
 -
 -		public override ProcedureSchemaCollection GetProcedures ()
 -		{
 -			ProcedureSchemaCollection procedures = new ProcedureSchemaCollection ();
--			
++			return columns;
++		}
++
++		public override ProcedureSchemaCollection GetProcedures ()
++		{
++			ProcedureSchemaCollection procedures = new ProcedureSchemaCollection ();
+ 			
 -			using (IPooledDbConnection conn = connectionPool.Request ()) {
 -				// Exclude: Language Handler (2280) - Triggers (2279) - Void (2278)
 -				using (IDbCommand command = conn.CreateCommand (
@@ -858,35 +891,6 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
 -		
 -		public override ParameterSchemaCollection GetProcedureParameters (ProcedureSchema procedure)
 -		{
-+					ORDER BY a.attnum;", view.Name))) {
-+					try {
-+						using (IDataReader r = command.ExecuteReader()) {
-+							while (r.Read ()) {
-+								ColumnSchema column = new ColumnSchema (this, view);
-+								column.Name = r.GetString(0);
-+								column.DataTypeName = r.GetString (1);
-+								column.SchemaName = view.SchemaName;
-+								column.IsNullable = r.GetBoolean (3);
-+								column.DataType.LengthRange.Default = r.GetInt32 (2);
-+								// TODO: Fill column.Definition
-+								columns.Add (column);
-+							}
-+							r.Close ();
-+						}
-+					} catch (Exception e) {
-+						QueryService.RaiseException (e);
-+					} finally {
-+						conn.Release ();
-+					}				
-+				}
-+			}
-+			return columns;
-+		}
-+
-+		public override ProcedureSchemaCollection GetProcedures ()
-+		{
-+			ProcedureSchemaCollection procedures = new ProcedureSchemaCollection ();
-+			
 +			using (IPooledDbConnection conn = connectionPool.Request ()) {
 +				// Exclude: Language Handler (2280) - Triggers (2279) - Void (2278)
 +				using (IDbCommand command = conn.CreateCommand (
@@ -1121,7 +1125,75 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
 -		public override ConstraintSchemaCollection GetTableConstraints (TableSchema table)
 -		{
 -			ConstraintSchemaCollection constraints = new ConstraintSchemaCollection ();
--			
++			using (IPooledDbConnection conn = connectionPool.Request ()) {
++				using (IDbCommand command = conn.CreateCommand (String.Format (
++										@"SELECT 
++											pc.proname, 
++											pc.oid::integer, 
++											pl.lanname, 
++											pc.prosrc, 
++											pc.procost, 
++											pc.provolatile,
++											pt.typname as rettypename,
++											pc.proargnames as argnames,
++											pc.proargmodes as argmodes,
++											pc.proallargtypes as argtypes
++										FROM 
++											pg_proc pc,
++											pg_user pu,
++											pg_type pt,
++											pg_language pl 
++										WHERE 
++											pc.proowner = pu.usesysid 
++											AND pc.prorettype = pt.oid 
++										    AND pc.prolang = pl.oid 
++											AND pc.prorettype not in (2278, 2279, 2280) 
++											AND pc.proname = '{0}'
++						
++										UNION 
++										
++										SELECT 
++											pc.proname, 
++											pt.oid::integer, 
++											pl.lanname, 
++											pc.prosrc, 
++											pc.procost, 
++											pc.provolatile,
++											pt.typname as rettypename,
++											pc.proargnames as argnames,
++											pc.proargmodes as argmodes,
++											pc.proallargtypes as argtypes
++										FROM 
++											pg_proc pc, 
++											pg_user pu, 
++											pg_type pt, 
++											pg_language pl 
++										WHERE 
++											pc.proowner = pu.usesysid 
++											AND pc.prorettype not in (2278, 2279, 2280) 
++											AND pc.prorettype = 0
++											AND pc.prolang = pl.oid
++											AND pc.proname = '{0}';", procedure.Name))) {
++					try {
++						using (IDataReader r = command.ExecuteReader()) {
++					    	if (r.Read ())
++								parameters = GetParams (r.GetValue (7).ToString (), r.GetValue (8).ToString (), r.GetValue (9).ToString (), conn);
++							r.Close ();
++						}
++					} catch (Exception e) {
++						QueryService.RaiseException (e);
++					} finally {
++						conn.Release ();
++					}
++				}
++			}
++			return parameters;
++		}
++
++		public override ConstraintSchemaCollection GetTableConstraints (TableSchema table)
++		{
++			ConstraintSchemaCollection constraints = new ConstraintSchemaCollection ();
+ 			
 -			using (IPooledDbConnection conn = connectionPool.Request ()) {
 -				using (IDbCommand command = conn.CreateCommand (String.Format (
 -					@"SELECT
@@ -1781,75 +1853,6 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
 -					dts.DataTypeCategory = DataTypeCategory.Xml;
 -					break;
 -				default:
-+			using (IPooledDbConnection conn = connectionPool.Request ()) {
-+				using (IDbCommand command = conn.CreateCommand (String.Format (
-+										@"SELECT 
-+											pc.proname, 
-+											pc.oid::integer, 
-+											pl.lanname, 
-+											pc.prosrc, 
-+											pc.procost, 
-+											pc.provolatile,
-+											pt.typname as rettypename,
-+											pc.proargnames as argnames,
-+											pc.proargmodes as argmodes,
-+											pc.proallargtypes as argtypes
-+										FROM 
-+											pg_proc pc,
-+											pg_user pu,
-+											pg_type pt,
-+											pg_language pl 
-+										WHERE 
-+											pc.proowner = pu.usesysid 
-+											AND pc.prorettype = pt.oid 
-+										    AND pc.prolang = pl.oid 
-+											AND pc.prorettype not in (2278, 2279, 2280) 
-+											AND pc.proname = '{0}'
-+						
-+										UNION 
-+										
-+										SELECT 
-+											pc.proname, 
-+											pt.oid::integer, 
-+											pl.lanname, 
-+											pc.prosrc, 
-+											pc.procost, 
-+											pc.provolatile,
-+											pt.typname as rettypename,
-+											pc.proargnames as argnames,
-+											pc.proargmodes as argmodes,
-+											pc.proallargtypes as argtypes
-+										FROM 
-+											pg_proc pc, 
-+											pg_user pu, 
-+											pg_type pt, 
-+											pg_language pl 
-+										WHERE 
-+											pc.proowner = pu.usesysid 
-+											AND pc.prorettype not in (2278, 2279, 2280) 
-+											AND pc.prorettype = 0
-+											AND pc.prolang = pl.oid
-+											AND pc.proname = '{0}';", procedure.Name))) {
-+					try {
-+						using (IDataReader r = command.ExecuteReader()) {
-+					    	if (r.Read ())
-+								parameters = GetParams (r.GetValue (7).ToString (), r.GetValue (8).ToString (), r.GetValue (9).ToString (), conn);
-+							r.Close ();
-+						}
-+					} catch (Exception e) {
-+						QueryService.RaiseException (e);
-+					} finally {
-+						conn.Release ();
-+					}
-+				}
-+			}
-+			return parameters;
-+		}
-+
-+		public override ConstraintSchemaCollection GetTableConstraints (TableSchema table)
-+		{
-+			ConstraintSchemaCollection constraints = new ConstraintSchemaCollection ();
-+			
 +			using (IPooledDbConnection conn = connectionPool.Request ()) {
 +				using (IDbCommand command = conn.CreateCommand (String.Format (
 +					@"SELECT
@@ -2658,7 +2661,7 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
  			ExecuteNonQuery (sb.ToString ());
  		}
  
-@@ -1454,12 +1455,12 @@ using Npgsql;
+@@ -1454,12 +1455,12 @@
  		{
  			throw new NotImplementedException ();
  		}
@@ -2677,7 +2680,7 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
  		//http://www.postgresql.org/docs/8.2/interactive/sql-alterdatabase.html
  		public override void AlterDatabase (DatabaseAlterSchema database)
  		{
-@@ -1492,34 +1493,34 @@ using Npgsql;
+@@ -1492,34 +1493,34 @@
  		
  		//http://www.postgresql.org/docs/8.2/interactive/sql-dropdatabase.html
  		public override void DropDatabase (DatabaseSchema database)
@@ -2740,7 +2743,7 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
  			
  		}
  
-@@ -1571,7 +1572,7 @@ using Npgsql;
+@@ -1571,7 +1572,7 @@
  		//http://www.postgresql.org/docs/8.2/interactive/sql-altertable.html
  		public override void RenameView (ViewSchema view, string name)
  		{
@@ -2749,7 +2752,7 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
  			ExecuteNonQuery (string.Concat("ALTER TABLE ", view.Name, " RENAME TO ", name, ";"));
  			view.Name = name;
  		}
-@@ -1579,7 +1580,7 @@ using Npgsql;
+@@ -1579,7 +1580,7 @@
  		//http://www.postgresql.org/docs/8.2/interactive/sql-altertrigger.html
  		public override void RenameTrigger (TriggerSchema trigger, string name)
  		{
@@ -2758,7 +2761,7 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
  											name, ";"));
  			trigger.Name = name;
  		}
-@@ -1597,8 +1598,8 @@ using Npgsql;
+@@ -1597,8 +1598,8 @@
  		}
  		
  		public override string GetProcedureAlterStatement (ProcedureSchema procedure)
@@ -2769,7 +2772,7 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
  		}
  						
  		/// <summary>
-@@ -1606,49 +1607,49 @@ using Npgsql;
+@@ -1606,49 +1607,49 @@
  		/// objects. This varies based on the connections Server Version.
  		/// </summary>
  		protected int LastSystemOID {
@@ -2812,16 +2815,6 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
 -					}
 -					return lastSystemOID;
 -				}
--			}
--		}
--		
--		public override string GetMimeType ()
--		{
--			return "text/x-npgsql";
--		}
--
--	}
--}
 +				using (IPooledDbConnection conn = connectionPool.Request ()) {
 +					using (NpgsqlConnection internalConn = conn.DbConnection as NpgsqlConnection) {
 +						int major = internalConn.PostgreSqlVersion.Major;
@@ -2854,7 +2847,16 @@ Index: monodevelop-database/MonoDevelop.Database.Sql.Npgsql/NpgsqlSchemaProvider
 +					}
 +					return lastSystemOID;
 +				}
-+			}
+ 			}
+-		}
+-		
+-		public override string GetMimeType ()
+-		{
+-			return "text/x-npgsql";
+-		}
+-
+-	}
+-}
 +		}
 +		
 +		public override string GetMimeType ()
