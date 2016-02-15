@@ -20,7 +20,7 @@ Url:            http://www.monodevelop.com
 Source:         %{name}_%{version}.orig.tar.bz2
 BuildRequires:  %db_packages
 BuildRequires:  gettext
-BuildRequires:  pkgconfig(mono)
+BuildRequires:  pkgconfig(mono) >= 4.2
 BuildRequires:  pkgconfig(mono-addins)
 BuildRequires:  pkgconfig(monodevelop) >= 5.10
 Requires:       %db_packages
