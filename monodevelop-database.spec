@@ -11,7 +11,7 @@
 %define db_packages mono-data-oracle mono-data-postgresql mono-data-sqlite
 
 Name:           monodevelop-database
-Version:        5.7.0.660
+Version:        5.10.0.871
 Release:        0
 License:        MIT
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
@@ -22,7 +22,7 @@ BuildRequires:  %db_packages
 BuildRequires:  gettext
 BuildRequires:  pkgconfig(mono)
 BuildRequires:  pkgconfig(mono-addins)
-BuildRequires:  pkgconfig(monodevelop) >= 5.7
+BuildRequires:  pkgconfig(monodevelop) >= 5.10
 Requires:       %db_packages
 Summary:        Monodevelop Database Addin
 Group:          Development/Languages/Mono
@@ -39,7 +39,7 @@ Requires:       monodevelop-database = %{version}
 The pkgconfig file for MonoDevelop Database.
 
 %prep
-%setup -q -n %{name}-5.7
+%setup -q -n %{name}-5.10
 
 %build
 %{?env_options}
