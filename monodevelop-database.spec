@@ -24,6 +24,8 @@ BuildRequires:  pkgconfig(mono) >= 4.2
 BuildRequires:  pkgconfig(mono-addins)
 BuildRequires:  pkgconfig(monodevelop) >= 5.10
 Requires:       %db_packages
+Requires:	monodevelop > 5.10
+Requires:	monodevelop < 5.11
 Summary:        Monodevelop Database Addin
 Group:          Development/Languages/Mono
 
