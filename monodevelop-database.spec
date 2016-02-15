@@ -28,6 +28,7 @@ Requires:	monodevelop > 5.10
 Requires:	monodevelop < 5.11
 Summary:        Monodevelop Database Addin
 Group:          Development/Languages/Mono
+AutoReqProv:	no
 
 %description
 Addin for MonoDevelop for an integrated database explorer and editor.
