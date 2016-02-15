@@ -1,3 +1,10 @@
+monodevelop-database (5.10.0.871-0xamarin1) wheezy; urgency=medium
+
+  * [9858651] Imported Upstream version 5.10.0.871
+  * [d0b86de] Bump dependencies for 5.10.0.871
+
+ -- Jo Shields <jo.shields@xamarin.com>  Mon, 15 Feb 2016 09:48:23 +0000
+
 monodevelop-database (5.7.0.660-0xamarin1) wheezy; urgency=medium
 
   * [420ac3b] Imported Upstream version 5.7.0.660
