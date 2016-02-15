@@ -8,7 +8,7 @@
 # Please submit bugfixes or comments via http://bugs.opensuse.org/
 #
 
-%define db_packages mono(System.Data.OracleClient) mono(Npgsql) mono(System.Data.Sqlite)
+%define db_packages mono(System.Data.OracleClient) mono(Npgsql) mono(Mono.Data.Sqlite)
 
 Name:           monodevelop-database
 Version:        5.10.0.871
