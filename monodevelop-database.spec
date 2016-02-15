@@ -17,7 +17,7 @@ License:        MIT
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
 Url:            http://www.monodevelop.com
-Source:         %{name}_%{version}.orig.tar.gz
+Source:         %{name}_%{version}.orig.tar.bz2
 BuildRequires:  %db_packages
 BuildRequires:  gettext
 BuildRequires:  pkgconfig(mono)
