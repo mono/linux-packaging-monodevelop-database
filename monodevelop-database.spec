@@ -29,6 +29,7 @@ Requires:	monodevelop < 5.11
 Summary:        Monodevelop Database Addin
 Group:          Development/Languages/Mono
 AutoReqProv:	no
+Patch0:		fix_dependencies.patch
 
 %description
 Addin for MonoDevelop for an integrated database explorer and editor.
@@ -43,6 +44,7 @@ The pkgconfig file for MonoDevelop Database.
 
 %prep
 %setup -q -n %{name}-5.10
+%patch0 -p1
 
 %build
 %{?env_options}
