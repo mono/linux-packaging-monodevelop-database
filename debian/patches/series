@@ -1,2 +1,3 @@
 fix_dependencies.patch
 fix_autoreconf.patch
+use_distro_npgsql.patch
