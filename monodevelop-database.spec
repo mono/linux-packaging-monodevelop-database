@@ -14,7 +14,7 @@
 
 Name:           monodevelop-database
 Version:        5.10.0.871
-Release:        0.xamarin.2
+Release:        0.xamarin.3
 License:        MIT
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
