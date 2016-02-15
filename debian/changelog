@@ -1,3 +1,10 @@
+monodevelop-database (5.10.0.871-0xamarin2) wheezy; urgency=medium
+
+  * [f072ec9] Needs modern Mono
+  * [67fb148] Add missing Npgsql support
+
+ -- Jo Shields <jo.shields@xamarin.com>  Mon, 15 Feb 2016 13:42:16 +0000
+
 monodevelop-database (5.10.0.871-0xamarin1) wheezy; urgency=medium
 
   * [9858651] Imported Upstream version 5.10.0.871
